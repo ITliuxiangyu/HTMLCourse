@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <style>
+            svg {
+                border: 1px solid blue;
+            }
+        </style>
+    </head>
+    <body>
+
+        <!--
+            path路径
+            d: 命令+参数序列
+            每一个命令都有两种表示方式，一种是用大写字母，表示采用绝对定位。另一种是用小写字母，表示采用相对定位
+            M x y(m dx dy), M 代表 Move to将画笔移动到哪里, 并不会在两点之间划线, 一般作为图片的起始点
+            L x y(l dx dy), L line to, 两点之间划线
+            Z: 闭合 不分大小写
+            H: 水平方向画线只有一个参数x (h dx 相对)
+            V: 垂直方向画线只有一个参数y (v dy 相对)
+
+        -->
+        <svg width="500" height="200">
+            <path d="M 10 10 l 50 50 L 80 10 Z" stroke="red" stroke-width="4px"  fill="none" />
+            <path d="M 200 10 l 50 50 L 270 10 h 180 v 50" stroke="red" stroke-width="4px"  fill="none" />
+        </svg>
+
+        <!--
+            三次贝塞尔曲线需要定义一个点和两个控制点，所以用C命令创建三次贝塞尔曲线，需要设置三组坐标参数：
+            C x1 y1, x2 y2, x y (or c dx1 dy1, dx2 dy2, dx dy)
+            这里的最后一个坐标(x,y)表示的是曲线的终点，另外两个坐标是控制点，(x1,y1)是起点的控制点，(x2,y2)是终点的控制点。如果你熟悉代数或者微积分的话，会更容易理解控制点，控制点描述的是曲线起始点的斜率，曲线上各个点的斜率，是从起点斜率到终点斜率的渐变过程。
+        -->
+
+        <svg width="500" height="500">
+            <!--<path d="M 10 250 C 60 350, 120 350, 170 250 C 220 150, 280 150, 330 250" stroke="red" stroke-width="2" fill="none" />-->
+            <!--
+                你可以将若干个贝塞尔曲线连起来，从而创建出一条很长的平滑曲线。通常情况下，一个点某一侧的控制点是它另一侧的控制点的对称（以保持斜率不变）。这样，你可以使用一个简写的贝塞尔曲线命令S，如下所示：
+                S x2 y2, x y (or s dx2 dy2, dx dy)
+                S命令可以用来创建与之前那些曲线一样的贝塞尔曲线，但是，如果S命令跟在一个C命令或者另一个S命令的后面，它的第一个控制点，就会被假设成前一个控制点的对称点。如果S命令单独使用，前面没有C命令或者另一个S命令，那么它的两个控制点就会被假设为同一个点。下面是S命令的语法示例，右图中的某个控制点用红色标示，与它对称的控制点用蓝色标示。
+
+                s一般情况下和c组合使用(厕所组合)
+
+                C = curveto
+                S = smooth curveto
+
+
+            -->
+            <path d="M 10 250 C 60 350, 120 350, 170 250 S 280 150, 330 250" stroke="red" stroke-width="2" fill="none" />
+        </svg>
+
+        <!--
+            另一种可用的贝塞尔曲线是二次贝塞尔曲线Q，它比三次贝塞尔曲线简单，只需要一个控制点，用来确定起点和终点的曲线斜率。因此它需要两组参数，控制点和终点坐标。
+            Q x1 y1, x y (or q dx1 dy1, dx dy)
+        -->
+        <svg>
+            <path d="M 10 75 Q 100 -25, 190 75" stroke="black" stroke-width="4px" fill="none" />
+        </svg>
+
+
+        <!--
+            就像三次贝塞尔曲线有一个S命令，二次贝塞尔曲线有一个差不多的T命令，可以通过更简短的参数，延长二次贝塞尔曲线。
+            T x y (or t dx dy)
+            和之前一样，快捷命令T会通过前一个控制点，推断出一个新的控制点。这意味着，在你的第一个控制点后面，可以只定义终点，就创建出一个相当复杂的曲线。需要注意的是，T命令前面必须是一个Q命令，或者是另一个T命令，才能达到这种效果。如果T单独使用，那么控制点就会被认为和终点是同一个点，所以画出来的将是一条直线。
+        -->
+        <svg width="450" height="200">
+            <path d="M10 100 Q 110 -50, 210 100 T 410 100" stroke="blue" stroke-width="4" fill="none" />
+        </svg>
+
+
+        <!--
+            弧形
+            A rx ry x-axis-rotation large-arc-flag sweep-flag x y
+            a rx ry x-axis-rotation large-arc-flag sweep-flag dx dy
+            rx: x轴半径
+            ry: y轴半径
+            x-axis-rotation: 旋转角度
+            large-arc-flag: 1带表取大圆弧 0代表取小圆弧
+            sweep-flag: 0代表顺时针画弧, 1代表逆时针画弧
+
+        -->
+        <svg width="500" height="400">
+            <path d="M 50 250 A 40 100, 48, 1, 1, 100 200" stroke="red" fill="none" stroke-width="2" />
+
+        </svg>
+
+    </body>
+</html>

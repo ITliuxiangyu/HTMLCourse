@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>rem 和 em</title>
+		<style>
+			html {
+				/* 
+					如果不做修改， 默认16px 
+				*/
+				/*font-size: 16px;*/
+				/* Chrome下解析一个rem为最小12px */
+				/*font-size: 10px;*/
+				/* 相当于设置成100px */
+				font-size: 6.25em;
+			}
+
+			* {
+				padding: 0;
+				margin: 0;
+			}
+
+			div {
+				/*font-size: 80px;*/
+				width: 2rem;
+				height: 2rem;
+				background: red;
+			}
+
+			p {
+				/*font-size: 2em;*/
+				/*font-size: 2rem;*/
+			}
+
+		</style>
+	</head>
+	<body>
+
+		<!-- 
+			em： 大小和父级font-size大小一样
+			rem: 大小相对于html的font-size大小
+		 -->
+	
+		<div>
+			我爱你
+			<!-- <p>你爱我吗？</p> -->
+		</div>
+		
+	</body>
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>绝对定位</title>
+		<style>
+			* {
+				padding: 0;
+				margin: 0;
+			}
+
+			.first {
+				position: relative;
+				width: 800px;
+				height: 800px;
+				border: 2px solid black;
+				margin: 100px auto 0;
+				background: yellow;
+			}
+			
+			.second {
+				/*position: static;*/
+				/*position: fixed;*/
+				width: 600px;
+				height: 600px;
+				border: 2px solid red;
+				background: blue;
+				margin: 50px auto 0;
+			}
+
+			.third {
+				/* 
+					绝对定位： 相对于距离自己最近的具有定位属性的，并且定位属性的值不是默认值static的父辈元素进行定位
+				*/
+				position: absolute;
+				width: 50px;
+				height: 50px;
+				background: black;
+				border: 2px solid gold;
+				right: 10px;
+				top: 10px;
+			}
+
+			.ship {
+				background: red;
+			}
+
+			.ship>.above {
+				width: 200px;
+				height: 150px;
+				background: yellow;
+				position: absolute;
+			}
+
+			.ship>.below {
+				width: 300px;
+				height: 100px;
+				background: blue;
+				position: absolute;
+
+			}
+			
+
+		</style>
+	</head>
+	<body>
+		
+		<div class="first">
+			<div class="second">
+				<div class="third"></div>
+			</div>
+		</div>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+
+		<div class="ship">
+			<div class="above"></div>
+			<div class="below"></div>
+		</div>
+
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+
+	</body>
+</html>

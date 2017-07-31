@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SVG常用形状2</title>
+    <!--
+    矩形 <rect>
+    圆形 <circle>
+    椭圆 <ellipse>
+    线 <line>
+    折线 <polyline>
+    多边形 <polygon>
+    路径 <path>
+    -->
+</head>
+<body>
+
+    <!--直线-->
+    <!--stroke-linecap代表线的终结样式-->
+    <!--stroke-dasharray 参数1.虚线长度2.间隔长度 创建虚线-->
+    <svg version="1.0">
+        <line x1="0" y1="0" x2="100" y2="100" stroke="red" stroke-width="5" stroke-dasharray="1 2" stroke-linecap="butt"></line>
+        <!--x1 y1 代表在x y轴上的开始-->
+        <!--x2 y2 代表在x y轴上的结束-->
+    </svg>
+
+    <!--多边形-->
+    <!--polygon:画多边形标签
+    points：多边形组成的坐标点,代表每个角的x y坐标
+    points="0 0,100 0,0 100" 代表x1 y1,x2 y2,x3 y3
+    points="100,10 40,180 190,60 10,60 160,180"代表 x1,y1 x2,y2 x3,y3
+    fill：长方形的填充颜色
+    stroke：长方形的边框颜色
+    stroke-width：边框宽带
+    fill-opacity：长方形的透明度
+    stroke-opacity：边框的透明度
+    fill-rule：的属性值有nonzero，evenodd两种
+    nonzero:本规则决定一个点是否在图形内部的方法是从该点向任意方向画直线，然后检查直线与图形的交叉。如果该点左右与图形交叉点数相同，则该点在图形外，否则在图形内。
+    evenodd:本规则通过从一点向任意方向画直线然后计算该直线与图形的交叉点的数量来决定该点是否在图形内。如果交叉点数为奇数，则该点在图形内，否则在图形外-->
+
+    <!--三角形-->
+    <svg version="1.0">
+        <polygon points="0 0,100 0,0 100" fill="blue"></polygon>
+    </svg>
+    <!--正方形-->
+    <svg version="1.0">
+        <polygon points="10 10,10 100,100 100,100 10" fill="lime" stroke="red" stroke-width="1px" stroke-opacity=".6"></polygon>
+    </svg>
+    <!--不规则四边形-->
+    <svg version="1.0">
+        <polygon points="0 0,100 0,200 100,30 100" fill="red"></polygon>
+    </svg>
+    <!--五角星-->
+    <!--x1,y1,x2,y2,x3,y3-->
+    <svg version="1.0" height="300px">
+        <!--最上 左下 右上 左上 右下-->
+        <polygon points="120 60,70 200,190 110,50 110,170 200" fill="red"></polygon>
+    </svg>
+    <svg version="1.0" height="300px">
+        <polygon points="100,10 40,180 190,60 10,60 160,180" fill="red" fill-rule="evenodd"></polygon>
+    </svg>
+
+    <!--曲线polyline  其和polygon 类似 polygon会把所有点连一起,polyline首尾不连-->
+    <svg version="1.0">
+        <polyline points="20,20 40,25 60,40 80,120 120,140 200,180" stroke="red" stroke-width="1" fill="none"></polyline>
+    </svg>
+    <svg version="1.0">
+        <polyline points="0 0,50 30,100 30,100 100" stroke="red" stroke-width="1" fill="none"></polyline>
+    </svg>
+</body>
+</html>

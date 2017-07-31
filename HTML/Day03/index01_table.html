@@ -1,0 +1,208 @@
+<!-- 文档声明 -->
+<!DOCTYPE html>
+<!-- 
+	html：代表网页
+	lang：代表网页的语言
+ -->
+<html lang="en">
+	<!-- head： 对网页的描述都在head里面写 -->
+	<head>
+		<!-- 
+			源信息： 编码格式， 作者， 关键字， 内容， 版权等等
+		 -->
+		<meta charset="UTF-8">
+
+		<!-- 网页的标题 -->
+		<title>table</title>
+	</head>
+	<body>
+		
+		<!-- table: 表格 -->
+		<!-- 
+			border: 边框
+			align: center 居中
+				   left   居左
+		 -->
+		<table border="2px" align="center">
+			
+			<!-- 标题 -->
+			<caption>花名册</caption>
+			<!-- 
+				tr： 表格的行
+			 -->
+			<tr>
+				<!-- 
+					th: 是td的变种， 字体默认加粗， 居中
+				 -->
+				<th width="200px">姓名</th>
+				<th>性别</th>
+				<th>年龄</th>
+
+			</tr>
+
+			 <!-- 第一行 -->
+			<tr>
+				<!-- td: 单元格 -->
+				<td align="center">小花</td>
+				<td>女</td>
+				<td>18</td>
+			</tr>
+			
+			<!-- 第二行 -->
+			<tr>
+				<td>小明</td>
+				<td>不详</td>
+				<td>未知</td>
+			</tr>
+			
+			<!-- tr加上align="center"以后， 里面的td内容都会居中 -->
+			<tr align="center">
+				<td bgcolor="red">小强</td>
+				<td>雄</td>
+				<td>1</td>
+			</tr>
+
+			<tr>
+				<td>小芳</td>
+				<td>女</td>
+				<td>28</td>
+			</tr>
+			
+			<tr>
+				<td>小雪</td>
+				<td>女</td>
+				<td>23</td>
+			</tr>
+
+		</table>
+
+
+		<!-- 
+			table: 由caption（标题）， thead（表头）， tbody（表体）， tfoot（表尾）组成
+		 -->
+
+		 <table border="2px" align="center">
+		 	<caption>1611成绩表</caption>
+
+			<!-- 表头 -->
+		 	<thead>
+		 		<tr>
+		 			<th>姓名</th>
+		 			<th>性别</th>
+		 			<th>成绩</th>
+		 		</tr>
+		 	</thead>
+			
+			<!-- 表尾： 写在tbody上方和下方都不会影响表格在网页中的显示效果， tfoot的内容都会显示在tbody下方，如果想让用户先看到表尾的内容，可以把tfoot写在tbody的上方 -->
+		 	<tfoot>
+				<td>统计</td>
+				<td>总分：400</td>
+				<td>平均分：66.66</td>
+			</tfoot>
+			
+			<!-- 表格的主要内容 -->
+		 	<tbody>
+		 		<tr>
+		 			<td>张烨熠</td>
+		 			<td>男</td>
+		 			<td>44</td>
+		 		</tr>
+
+		 		<tr>
+		 			<td>张振</td>
+		 			<td>男</td>
+					<td>66</td>
+		 		</tr>
+
+		 		<tr>
+		 			<td>付少鹏</td>
+		 			<td>男</td>
+		 			<td>40</td>
+		 		</tr>
+
+		 	</tbody>
+			
+			<!-- 
+				table里面可以有多个tbody， 并不影响表格的显示， 但是多个tbody可以提高用户体验， 表格可以分段加载， 不用等待所有数据都请求下来以后才展示（可以分段显示）
+			 -->
+		 	<tbody>
+		 		<tr>
+		 			<td>皮俊辉</td>
+		 			<td>男</td>
+		 			<td>80</td>
+		 		</tr>
+		 		<tr>
+		 			<td>肖东东</td>
+		 			<td>男</td>
+		 			<td>70</td>
+		 		</tr>
+		 		<tr>
+		 			<td>刘璐璐</td>
+		 			<td>女</td>
+					<td>100</td>
+		 		</tr>
+		 	</tbody>
+			
+			<!-- <tfoot>
+				<td>统计</td>
+				<td>总分：400</td>
+				<td>平均分：66.66</td>
+			</tfoot> -->
+
+		 </table>
+
+
+		 <br>
+		 <br>
+		 <br>
+		 <br>
+		 <br>
+			
+		<!--
+			 cellspacing: 单元格之间的距离 
+			 cellpadding: 单元格与内容之间的间隙
+		-->
+		 <table border="2px" align="center" cellspacing="10px" cellpadding="20px">
+		 	<tr>
+		 		<th>菜系</th>
+		 		<!-- 
+					colspan: 列的跨度
+		 		 -->
+		 		<th colspan="2">菜名</th>
+		 		<!-- <th>随便</th> -->
+		 	</tr>
+		 	<tr>
+		 		<td>西北菜</td>
+		 		<td>羊肉泡馍</td>
+		 		<td>肉夹馍</td>
+		 	</tr>
+		 	<tr>
+		 		<td>东北菜</td>
+		 		<td>小鸡炖蘑菇</td>
+		 		<td>猪肉炖粉条</td>
+		 	</tr>
+			
+			<tr>
+				<td rowspan="2">黑暗料理</td>
+				<td>烤榴莲</td>
+				<td rowspan="2"><img src="blg.jpg" alt=""></td>
+			</tr>
+
+			<tr>
+				<td>油炸冰棍</td>
+				<!-- <td>盐水泡馍</td> -->
+			</tr>
+
+
+
+		 </table>
+
+		 <a href="../Day02/index02_emmet.html">假如时光可以回到昨天， 晶晶的红包我就不给她了</a>
+
+
+
+	</body>
+</html>
+
+
+

@@ -1,0 +1,75 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    vertical-align: top;
+}
+
+/* 头部内容 */
+.header {
+    background: white;
+    overflow: hidden;
+    padding: 43px 130px 43px 135px;
+}
+
+.header ul span {
+    color: red;
+}
+
+.header ul:first-child {
+    float: left;
+}
+
+.header ul:first-child li {
+    font-size: 34px;
+    background: white;
+}
+
+
+.header ul:last-child {
+    float: right;
+    line-height: 35px;
+}
+
+.header ul:last-child li {
+    float: left;
+    margin-left: 62px;
+}
+
+/* shop内容 */
+.shop {
+    height: 720px;
+    background: orange;
+}
+
+
+/* 分类内容 */
+.catalogue {
+    height: 130px;
+    background: yellow;
+}
+
+.sv {
+    height: 761px;
+    background: green;
+}
+
+.footer {
+    height: 142px;
+    background: blue;
+}
+
+.address {
+    height: 396px;
+    background: cyan;
+}

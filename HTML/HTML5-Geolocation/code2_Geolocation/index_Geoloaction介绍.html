@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML5地图定位</title>
+</head>
+<!--HTML5中提供了一组Geolocation API,用来获取用户的地理位置信息,在移动设备中,如果浏览器支持切设置有定位的功能,就可以使用这组API定位用户的地理位置信息-->
+<body>
+
+</body>
+</html>
+<script>
+//    console.log(window.navigator);
+    /*
+    * Navigator 对象包含的属性描述了正在使用的浏览器。可以使用这些属性进行平台专用的配置
+    * 在window的navigator对象里在HTML5中新增了geolocation对象
+    * geolocation对象有三个方法
+    * 分别为getCurrentPosition获取最近地址、watchPosition监听位置信息、clearWatch清理监听
+    *
+    * */
+    /*
+    * navigator.geolocation.getCurrentPosition()
+    * 方法内部有三个参数:
+    * successCallback  errorCallback options(配置对象)
+    * */
+    window.navigator.geolocation.getCurrentPosition(function (data) {
+        console.log(data);
+        /*
+        * 请求成功的话会得到data结果
+        * 其有两个参数 timestamp表示时间戳 coords坐标
+        * coords内又有很多参数
+        * accuracy 当前地理位置的精确度
+        * latitude 当前地理位置的纬度
+        * longitude 当前位置的经度
+        * altitude 当前地理位置的海拔高度
+        * altitudeAcuracy 当前地理位置的海拔精确度(单位:米)
+        * heading 当前设置的前进方向,无法获取时返回null
+        * speed 当前设置的前进速度(米/每秒) 无法获取时返回null
+        * */
+    },function (error) {
+        /*
+        * 请求失败的回调
+        * 如果定位失败或者用户禁止定位信息会走该方法
+        * 有两个参数
+        * code 为0时代表未知错误信息 为1时用户拒绝了定位的服务请求 为2时没有获取正确的未知信息 为3时获取位置的操作超时
+        * message
+        * */
+        console.log(error);
+
+    },{timeout:10000,maximumage:10000,enableHighAccuracy:true});
+    /*
+    * options是一个可选的配置对象,如果设置,可以为对象添加一些属性内容
+    * timeout 获取位置信息操作的超时时间(毫秒),事件超出时会触发errorCallback回调函数,error.code的属性值为3,表示已经超时
+    * maximumage 设置缓存获取的地理位置数据信息的有效时间(毫秒),超过设置时间时重新获取,否则调用缓存中的数据信息
+    * enableHighAccuracy 布尔值 表示是否要精确的获取地理位置信息,在移动设备上如果为true,则消耗更多的电量
+    * */
+
+</script>

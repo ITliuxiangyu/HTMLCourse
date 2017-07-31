@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+		<style>
+			/*
+				选择器， 选择网页中的元素
+			*/
+			/*
+				元素选择器
+			*/
+			p {
+				/* 字体颜色 */
+				color: yellowgreen; 
+			}
+
+
+
+			/*
+				ID选择器
+				需要给元素设置id属性， 并且id属性的值在页面中唯一
+			*/
+			#music {
+				color: blue;
+			}
+			
+			/*
+				class选择器
+				需要给元素设置class属性， class可以有多个值， eg： class="green red blue"
+			*/
+			.red {
+				background-color: red;
+			}
+
+			.green {
+				background-color: green;
+			}
+
+			/* 
+				子代选择器 
+				element1>element2: 选择element1下面的子代（第一代）element2元素;
+			*/
+			.poem>p {
+				color: orange;
+			}
+
+			.poem>div>p {
+				color: purple;
+			}
+			
+			/* 
+				后代选择器 
+				选择元素中所有的后代
+			*/
+			.novel li {
+				color: skyblue;
+			}
+			
+			/*
+				相邻兄弟选择器
+				element1+element2
+				选择在element1后面的第一个元素element2
+			*/
+			.first+div {
+				background-color: gold;
+			}
+
+			/*
+				群组选择器
+				选择一组元素， 选择器中间用 逗号 隔开
+			*/
+			.red, .orange, .yellow, .green, .cyan, #blue, #purple {
+				width: 200px;
+				height: 20px;
+				/* 距离上边元素的间隙 */
+				margin-top: 15px;
+				background-color: black;
+			}
+
+			/*
+				* 选择器, 一般通过 * 选择器重置默认样式
+			*/
+			.test * {
+				color: lightblue;
+			}
+
+			* {
+				padding: 0;
+				margin: 0;
+			}
+
+
+		</style>
+	</head>
+	<body>
+		<p>鹅鹅鹅， 曲项向天歌。白毛浮绿水， 红掌拨清波。</p>
+		<p>日赵香炉生紫烟， 遥看瀑布挂前川。 飞流直下三千尺， 疑似银河落九天。</p>
+		<p id="music">菊花残， 满地伤。 你的笑容以绽放。花落人断肠， 我心。。。</p>
+
+		<ul>
+			<li class="red">1</li>
+			<li class="green">2</li>
+			<li class="red">3</li>
+			<li class="green">4</li>
+		</ul>
+
+		<div class="poem">
+			<p>少小离家老大回， 乡音无改鬓毛吹。 儿童相见不相识， 笑问客从何处来。</p>
+			<p>床前明月光， 疑是地上霜。 举头望明月， 低头思故乡。</p>
+			<p>春眠不觉晓， 处处闻啼鸟。 夜来风雨声， 花落知多少。</p>
+			<div>
+				<p>总结， 写上面三首诗的作者都是淫才。</p>
+			</div>
+		</div>
+
+		<ul class="novel">
+			<li>三国演义</li>
+			<li>水浒传</li>
+			<li>新白娘子传奇</li>
+			<li>射雕英雄传
+				<ul>
+					<li>第一章： 买弓</li>
+					<li>第二章： 买箭</li>
+					<li>第三章： 找雕</li>
+					<li>第四章： 射雕</li>
+				</ul>
+			</li>
+		</ul>
+		
+		
+		<div class="first">first</div>
+		<div>second</div>
+		<div>third</div>
+
+		<ul>
+			<li class="red"></li>
+			<li class="orange"></li>
+			<li class="yellow"></li>
+			<li class="green"></li>
+			<li class="cyan"></li>
+			<li id="blue"></li>
+			<li id="purple"></li>
+		</ul>
+
+		<div class="test">
+			<p>大家好</p>
+			<ul>
+				<li>你好</li>
+				<li>他好</li>
+			</ul>
+			<div>美女， 约吗？</div>
+
+		</div>
+
+
+
+	</body>
+</html>

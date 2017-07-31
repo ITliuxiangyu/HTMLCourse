@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+		<style>
+			#box {
+				/*
+					子元素转换样式， 值为preserve-3d的时候， 才能看到子元素的3d效果， 默认值flat （2d）效果
+				*/
+				transform-style: preserve-3d;
+				width: 200px;
+				height: 200px;
+				position: relative;
+				/*background: pink;*/
+				margin: 150px auto 0;
+				transform: rotateX(45deg) rotateY(45deg);
+			}
+
+			#box>div {
+				width: 200px;
+				height: 200px;
+				font-size: 100px;
+				line-height: 200px;
+				text-align: center;
+				color: white;
+				opacity: .5;
+				position: absolute;
+			}
+
+			#box>div:first-child {
+				/* 沿着z轴平移100px */
+				transform: translateZ(100px);
+				background: red;
+				
+				/* 第一个值x轴方向平移量， 第二个值y轴， 第三个值z轴 */
+				/*transform: tranlate3d(0px, 0px, 100px);*/
+				
+				/*
+					rotate3d(x, y, z, 角度)
+					前三个参数代表该方向是否旋转 （1， 代表旋转， 0代表不旋转）
+				*/
+				/*transform: rotate3d(0, 0, 1, 90deg);*/
+				/*backface-visibility: hidden;*/
+			}
+
+			#box>div:nth-child(2) {
+				transform: rotateY(180deg) translateZ(100px);
+				background: orange;
+
+				/* 能否通过元素背面看到元素内容 */
+				/*backface-visibility: hidden;*/
+			}
+
+			#box>div:nth-child(3) {
+				transform: rotateY(-90deg) translateZ(100px);
+				background: yellow;
+			}
+
+			#box>div:nth-child(4) {
+				transform: rotateY(90deg) translateZ(100px);
+				background: purple;
+			}
+
+			#box>div:nth-child(5) {
+				transform: rotateX(90deg) translateZ(100px);
+				background: blue;
+			}
+
+			#box>div:nth-child(6) {
+				transform: rotateX(-90deg) translateZ(100px);
+				background: green;
+			}
+
+		</style>
+	</head>
+	<body>
+
+		<div id="box">
+			<div>1</div>
+			<div>2</div>
+			<div>3</div>
+			<div>4</div>
+			<div>5</div>
+			<div>6</div>
+		</div>
+		
+	</body>
+</html>

@@ -1,0 +1,134 @@
+/*
+   在//后面的注释在CSS文件中是不显示的
+*/
+// 歪哥
+/*
+    变量, 可以存储一个值
+    如果多个元素使用同一种样式, 这样代码维护起来更加高效
+*/
+@color: blue;
+h2 {
+  color: @color;
+}
+
+h3 {
+  color: @color;
+}
+
+div {
+  color: @color;
+}
+
+@witdh: 20px;
+.one {
+  /*
+      变量作用域
+      如果该作用域下有该变量, 就直接使用该作用域下的变量, 如果没有, 使用更大作用域下的变量
+  */
+  @witdh: 50px;
+  width: @witdh;
+  height: 30px;
+  background-color: @color;
+}
+
+.two {
+  width: @witdh;
+  background-color: darkred;
+}
+
+
+/*
+  Mixins(混入)
+*/
+.borderWidth(@a: 5px) {
+  border-width: @a;
+}
+
+.three {
+  .borderWidth;
+}
+
+.four {
+  .borderWidth(20px);
+}
+
+.boxShadow(@x: 0, @y: 0, @blur: 1px, @r: 0, @color: red) {
+  // arguments 存放的是所有参数
+  -webkit-box-shadow: @arguments;
+  -moz-box-shadow: @arguments;
+  box-shadow: @arguments;
+}
+
+.five {
+  .boxShadow(1px, 1px, 8px, 0, blue);
+}
+
+// 可以解决工程量大的时候, 名字重复问题
+#waigeSpace {
+  .user {
+    width: 300px;
+    height: 300px;
+    border: 1px solid red;
+  }
+}
+
+.six {
+  #waigeSpace>.user;
+}
+
+// 样式可以按照结构的层级关系来写
+.home {
+  width: 600px;
+  height: 600px;
+  margin: 100px auto 0;
+  border: 2px solid black;
+
+  .top {
+    height: 200px;
+    background: yellow;
+  }
+
+  .bottom {
+    height: 400px;
+    background: blue;
+
+    ul {
+      list-style: none;
+
+      li {
+        height: 15px;
+        background-color: orange;
+        margin: 10px 0;
+      }
+    }
+  }
+}
+
+
+a {
+  text-decoration: none;
+  color: red;
+  font-size: 20px;
+
+  // 如果写上&, 就是给本身添加hover, 如果不写, 给后代元素添加hover
+  &:hover {
+    font-size: 50px;
+  }
+}
+
+@initColor: #333333;
+.seven {
+  color: @initColor * 2;
+}
+
+.eight {
+  height: 30px;
+  background: @initColor;
+}
+
+.nine {
+  height: 30px;
+  background: lighten(@initColor, 50%);
+  margin-top: 10px;
+}
+

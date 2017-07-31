@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SVG滤镜模糊效果</title>
+</head>
+<body>
+    <!--
+    sourcegraphic
+    这个关键词代表的图形元素，是原始输入<filter>元素
+    sourcealpha
+    这个关键词代表的图形元素，是原始输入<filter>元素sourcealpha所有的规则sourcegraphic但只有Alpha通道的应用。
+    背景
+    这个关键字表示图像快照的SVG文档过滤区域下的时候，<filter>元素调用
+    backgroundalpha
+    等同于背景只有alpha通道的使用。
+    fillpaint
+    这个关键词所代表的价值填充对滤波效果在目标元素的属性。在许多情况下，这fillpaint到处都是不透明的，但它不可能是情形如果呈梯度或模式本身包括透明或半透明部分涂料。
+    strokepaint
+    这个关键词所代表的价值划对滤波效果在目标元素的属性。在许多情况下，这strokepaint到处都是不透明的，但它不可能是情形如果呈梯度或模式本身包括透明或半透明部分涂料。-->
+    <!--滤镜效果必须在filter元素内写-->
+    <!--feGaussianBlur有两个属性 in和stdDeviation in代表生效的区域 stdDeviation代表模糊度-->
+    <svg version="1.0">
+        <defs>
+            <filter id="f1">
+                <feGaussianBlur in="Sourcegraphic" stdDeviation="5"></feGaussianBlur>
+            </filter>
+        </defs>
+        <circle cx="170" cy="60" r="50" fill="red" filter="url(#f1)"></circle>
+    </svg>
+    <!--feMorphology 形态滤镜 两种模式 扩张或侵蚀(粗化或细化)-->
+    <!--三个属性 in作用范围 operator两个样式粗化dilate或细化erode-->
+    <!--radius如果提供了两个<number>，则第一个数代表了x-radius，第二个数代表了y-radius。如果只提供了一个数字，则值同时用于x和y-->
+    <svg version="1.0">
+        <defs>
+            <filter id="f1">
+                <feMorphology in="Sourcegraphic" operator="dilate" radius="1 .5"></feMorphology>
+            </filter>
+        </defs>
+        <text x="10" y="15" fill="red" filter="url(#f1)">哈哈 有点冷</text>
+    </svg>
+    <!--feColorMatrix颜色滤镜-->
+    <!--三个属性 in生效位置 type类型 values代表不同类型的值-->
+    <!--常用类型为matrix矩阵-->
+    <!--values="1   1   1   0   0
+                0   1   0   0   0
+                1   1   0   1   0
+                0   0   0   1   0 -->
+    <!--代表 R G B A M(乘数)-->
+    <!--/* R G B A 1 */
+        1 0 0 0 0 // R = 1*R + 0*G + 0*B + 0*A + 0
+        0 1 0 0 0 // G = 0*R + 1*G + 0*B + 0*A + 0
+        0 0 1 0 0 // B = 0*R + 0*G + 1*B + 0*A + 0
+        0 0 0 1 0 // A = 0*R + 0*G + 0*B + 1*A + 0-->
+    <svg version="1.0">
+        <defs>
+            <filter id="f1">
+                <feColorMatrix in="Sourcegraphic" type="matrix"
+                               values="1  0   0   0   0
+                                       0   1   0   0   0
+                                       0   0   1   0   0
+                                       0   0   0   1   0 ">
+                </feColorMatrix>
+            </filter>
+        </defs>
+        <image xlink:href="1.jpg" height="200px" width="300px" filter="url(#f1)"></image>
+    </svg>
+
+</body>
+</html>

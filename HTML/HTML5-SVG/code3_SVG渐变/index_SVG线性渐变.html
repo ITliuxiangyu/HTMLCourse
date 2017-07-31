@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SVG渐变</title>
+</head>
+<body>
+    <!--渐变是一种从一种颜色到另一种颜色的平滑过渡。另外，可以把多个颜色的过渡应用到同一个元素上。
+    SVG渐变主要有两种类型：Linear(线性)、Radial(放射性)-->
+    <!--<linearGradient>元素用于定义线性渐变
+    <linearGradient>标签必须嵌套在<defs>的内部,<defs>标签是definitions的缩写，它可对诸如渐变之类的特殊元素进行定义。
+   线性渐变可以定义为水平，垂直或角渐变：
+   当y1和y2相等，而x1和x2不同时，可创建水平渐变
+   当x1和x2相等，而y1和y2不同时，可创建垂直渐变
+   当x1和x2不同，且y1和y2不同时，可创建角形渐变-->
+    <!--<linearGradient>标签的id属性可为渐变定义一个唯一的名称
+    <linearGradient>标签的X1，X2，Y1，Y2属性定义渐变开始和结束位置
+    渐变的颜色范围可由两种或多种颜色组成。每种颜色通过一个<stop>标签来规定。offset属性用来定义渐变的开始和结束位置。
+    填充属性把 ellipse 元素链接到此渐变-->
+    <!--水平渐变-->
+    <svg version="1.0">
+        <defs>
+            <linearGradient id="demo1" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="red" stop-opacity="1"></stop>
+                <stop offset="50%" stop-color="green" stop-opacity="1"></stop>
+                <stop offset="100%" stop-color="blue" stop-opacity="1"></stop>
+            </linearGradient>
+        </defs>
+        <ellipse cx="100" cy="100" rx="80" ry="50" fill="url(#demo1)"></ellipse>
+    </svg>
+
+    <!--垂直渐变-->
+    <svg version="1.0">
+        <defs>
+            <linearGradient id="demo2" x1="0%" y1="100%" x2="0%" y2="0%">
+                <stop offset="0%" stop-color="red" stop-opacity="1"></stop>
+                <stop offset="100%" stop-color="blue" stop-opacity="1"></stop>
+            </linearGradient>
+        </defs>
+        <ellipse rx="80" ry="50" cx="100" cy="100" fill="url(#demo2)"></ellipse>
+    </svg>
+    <!--角形渐变-->
+    <svg version="1.0">
+        <defs>
+            <linearGradient id="demo3" x1="0%" y1="100%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="red" stop-opacity="1"></stop>
+                <stop offset="100%" stop-color="blue" stop-opacity="1"></stop>
+            </linearGradient>
+        </defs>
+        <ellipse rx="80" ry="50" cx="100" cy="100" fill="url(#demo3)"></ellipse>
+    </svg>
+    <!--放射性渐变-->
+    <!--通过两个点来定义其边缘位置，cx和cy属性及半径r来定义了渐变结束所围绕的圆环，通过设置这些点我们可以移动渐变范围并改变它的大小-->
+    <svg version="1.0">
+        <defs>
+            <radialGradient id="demo1" cx="50%" cy="50%" r="70%">
+                <stop offset="0%" stop-color="red" stop-opacity="1"></stop>
+                <stop offset="50%" stop-color="black" stop-opacity="1"></stop>
+            </radialGradient>
+        </defs>
+        <ellipse cx="100" cy="100" rx="80" ry="50" fill="url(#demo1)"></ellipse>
+    </svg>
+    <!--fx fy设置了渐变内部的焦点,移动焦点亮的地方会移动-->
+    <svg version="1.0">
+        <defs>
+            <radialGradient id="demo1" cx="50%" cy="50%" r="70%" fx="10%" fy="50%">
+                <stop offset="0%" stop-color="red" stop-opacity="1"></stop>
+                <stop offset="50%" stop-color="blue" stop-opacity="1"></stop>
+            </radialGradient>
+        </defs>
+        <ellipse cx="100" cy="100" rx="80" ry="50" fill="url(#demo1)"></ellipse>
+    </svg>
+</body>
+</html>

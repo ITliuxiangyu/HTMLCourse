@@ -1,0 +1,9 @@
+div {
+	width: 600px;
+	height: 600px;
+	margin: 100px auto 0;
+	background: red;
+	border-radius: 20%;
+	/* 过渡动画 */
+	transition: 2s;
+}

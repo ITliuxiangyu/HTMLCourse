@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        form{
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+    <form action="#">
+        <fieldset>
+            <legend>登录</legend>
+            <p>
+                姓名:<input placeholder="">
+            </p>
+            <p>
+                年龄:<input placeholder="">
+            </p>
+            <p>
+                性别:<input placeholder="">
+            </p>
+            <p>
+                <input type="checkbox" placeholder="" id="checkSave">
+                <span>是否保存密码?</span>
+            </p>
+        </fieldset>
+    </form>
+
+</body>
+</html>
+<script>
+    var checkBox = document.getElementById("checkSave");
+    checkBox.checked = true;
+
+</script>

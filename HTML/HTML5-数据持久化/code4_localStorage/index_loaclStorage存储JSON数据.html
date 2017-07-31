@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <p id="demoP"></p>
+</body>
+</html>
+<!--在实际开发中我们有时候会存储服务器上请求下来的JSON数据-->
+<script src="jquery.min.js"></script>
+<script>
+    $.ajax({
+        url:'wy.json',
+        method:'get',
+        success:function (result) {
+            console.log(result);//直接请求下来的result是对象
+            localStorage.wy_news = result;//这样存放的是[object object]是无法使用的
+            //localStorage存放的必须是字符串,这一点一定要注意在实际项目开发中一定要注意数据类型
+            localStorage.wy_news = JSON.stringify(result);
+        },
+        error:function (error) {
+
+        }
+    });
+    //Web storage中存放的只能是字符串,所以我们使用的时候也要自己转换成对象
+    var wy_news = localStorage.getItem('wy_news');
+    var data = JSON.parse(wy_news);
+    document.getElementById('demoP').innerHTML = data.T1348647853363[0].title;
+
+    //练习  写个把取出来的数据增加点元素再放回去的demo
+</script>

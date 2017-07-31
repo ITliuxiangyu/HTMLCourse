@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>sessionStorage</title>
+</head>
+<body>
+    <p id="demoP"></p>
+    <button onclick="goToNew()">点我</button>
+</body>
+</html>
+<!--sessionStorage是Web storage中两种数据存储方式之一,其用于临时数据的存放-->
+<!--该数据其实实质上是保存在session对象中,用户打开浏览器时,可以查看操作过程中要求临时保存的数据,一旦浏览器关闭sessionStorage对象保存的数据将全部丢失-->
+<!--重要标注: Web storage的数据储存都是跟网址的地址有关,比如百度的和自己的就不是一个对象-->
+<script>
+    //sessionStorage使用方式
+    console.log(sessionStorage);
+    //方式一 使用setItem方法
+    // sessionStorage.setItem('userName','zhouaoqi');
+    //方式二 直接.方法
+    sessionStorage.userName = '张三';
+
+    function goToNew() {
+        //window.open('index_get.html');
+        window.location.href = 'sessionStorage_test.html';
+    }
+    //取值方法一
+    //var data = sessionStorage.getItem('userName');
+    //取值方法二
+    var data = sessionStorage.userName;
+
+    //其他方法 remove() clear()
+
+    document.getElementById('demoP').innerText = data;
+</script>

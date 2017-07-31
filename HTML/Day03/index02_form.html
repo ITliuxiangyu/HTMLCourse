@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>表单</title>
+	</head>
+	<body>
+
+		<!-- 
+			表单作用： 采集数据， 提交到服务器
+			action: URL, 采集的数据提交到的服务器的地址
+			method: 默认get， post方式比get要安全
+			注意： get 和 post 都是http请求的常用方式
+
+
+		 -->
+		 <form action="http://127.0.0.1/myServer.php" method="get">
+		 	
+			
+			<!-- 
+				type: 可以决定input的类型
+			 -->
+			 <!-- 
+				type: text, 输入框
+				name: 后台要的key值， 方便采集数据， name唯一
+				placeholder： 占位符
+			  -->
+			用户名：<input type="text" name="user" placeholder="请输入用户名">
+			<br>
+			<!-- 
+				type: password, 密文输入框
+				size: 尺寸， 代表多少个字符的大小
+				minlength: 输入的最小字符数
+				maxlength: 输入的最大字符数
+			 -->
+			密码： <input type="password" name="password" placeholder="请输入密码" -size="6" maxlength="5" minlength="3">
+
+			<!-- 
+				单选框
+					一组的但单选框name必须一样
+			 -->
+			 <br>
+			 性别：
+			 <input type="radio" name="gender" value="male">男
+			 <input type="radio" name="gender" value="female">女
+
+			 <br>
+			 <!-- 
+					checkbox: 复选框
+			  -->
+			 喜欢的水果：
+			 <input type="checkbox" name="fruit" value="apple">苹果
+			 <input type="checkbox" name="fruit" value="orange">橘子
+			 <input type="checkbox" name="fruit" value="pine">菠萝
+			 <input type="checkbox" name="fruit" value="durian">榴莲
+
+			<br>
+			请选择您喜欢的女明星：
+			 <!-- 
+				label: 标签， label中的for的值要和所绑定的input的id的值一样
+			  -->
+			 <input type="checkbox" value="mr" id="mr"><label for="mr">马蓉</label>
+			 <input type="checkbox" value="cls" id="cls"><label for="cls">苍老师</label>
+			 <input type="checkbox" value="pjl" id="pjl"><label for="pjl">潘金莲</label>
+
+			
+			<!-- 
+				隐藏按钮， 浏览网页的用户看不到内容， 可以给服务器发送一些隐藏数据
+
+			 -->
+			<input type="hidden" name="num" value="1">
+
+			<!-- 
+				选择文件
+			 -->
+			<input type="file">
+
+			<!-- 
+				select： 下拉列表
+			 -->
+			 <br>
+			 喜欢的运动：
+			 <select name="sport" id="">
+			 	<option value="pp">乒乓球</option>
+			 	<!-- selected: 默认选中 -->
+			 	<option value="basketball" selected>篮球</option>
+			 	<option value="football">足球</option>
+			 </select>
+			
+			<!-- 
+				文本域
+					cols: 列
+					rows：行
+			 -->
+			 <textarea name="introduce" id="" cols="30" rows="3"></textarea>
+
+			<!-- 
+				value： input显示的内容
+			 -->
+			<input type="submit" value="提交">
+			
+			<!-- 
+				reset： 重置form表单中的元素
+			 -->
+			<input type="reset" value="重置">
+
+			<!-- 
+				image: 图片按钮， 也可以提交form表单中的数据
+			 -->
+			<input type="image" src="beauty.jpg">
+
+		 </form>
+
+		
+	</body>
+</html>

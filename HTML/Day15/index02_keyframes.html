@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>关键帧动画</title>
+		<style>
+			div {
+				width: 200px;
+				height: 200px;
+				background: greenyellow;
+
+				
+				/* 动画名称 */
+				/*animation-name: lulu;*/
+				
+				/* 动画时间 */
+				/*animation-duration: 1s;*/
+
+				/* 
+					动画函数 
+					值和transition-timing-function的值一样
+
+					只不过多了一个steps函数 （阶跃函数）
+				*/
+				/*animation-timing-function: linear;*/
+
+				/* 动画延迟时间 */
+				/*animation-delay: 2s;*/
+
+				/* 
+					动画播放次数 
+					infinite: 无限次;
+				*/
+				/*animation-iteration-count: 6;*/
+				/*animation-iteration-count: infinite;*/
+
+				/* 
+					动画方向 
+					normal： 默认方向， 正方向
+					reverse: 反方向执行动画;
+					alternate: 奇数次正方向， 偶数次反方向;
+					alternate-reverse: 奇数次反方向， 偶数次正方向;
+
+				*/
+				/*animation-direction: alternate;*/
+				
+				/* 
+					动画填充模式 
+					forwards: 保留最后一针动画效果;
+					backwards: 在有延迟时间的时候， 延迟时间没有到的时候元素保留第一帧动画效果;
+					both: 既有forwards效果又有backwards效果;
+				*/
+				/*animation-fill-mode: backwards;*/
+				
+				animation: lulu 2s linear 0s infinite alternate both,
+							saopeng 2s linear infinite;
+
+			}
+
+			@keyframes lulu {
+				/* 
+					如果from不写， 值就是初始值 
+					from相当于0%
+				*/
+				from {
+					/*width: 100px;*/
+					/*transform: rotate(0deg);*/
+					background-color: red;
+				}
+				/* 
+					如果不写to， 值也是初始值 
+					to相当于100%
+				*/
+				to {
+					/*width: 400px;*/
+					/*transform: rotate(360deg);*/
+					background-color: green;
+				}
+			}
+
+			@keyframes saopeng {
+
+				0% {
+					transform: translate(0, 0);
+				}
+				
+				/* animation-duration * 10% */
+				10% {
+					transform: translate(20px, 0);
+				}
+
+				20% {
+					transform: translate(40px, 0);
+				}
+
+				30% {
+					transform: translate(60px, 0);
+				}
+
+				40% {
+					transform: translate(60px, 20px);
+				}
+
+				50% {
+					transform: translate(60px, 40px);
+				}
+
+				60% {
+					transform: translate(40px, 40px);
+				}
+
+				70% {
+					transform: translate(20px, 40px);
+				}
+
+				80% {
+					transform: translate(0px, 40px);
+				}
+
+				90% {
+					transform: translate(0px, 20px);
+				}
+
+				100% {
+					transform: translate(0px, 0px);
+				}
+
+			}
+
+		</style>
+	</head>
+	<body>
+
+		<div></div>
+		
+	</body>
+</html>

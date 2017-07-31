@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>其他结构伪类选择器</title>
+		<style>
+			/* 选中没有任何内容的元素 */
+			p:empty {
+				height: 20px;
+				background: red;
+			}
+			
+			/* 选中同级下只有一个该元素的元素（独生子女） */
+			li:only-child {
+				background: blue;
+			}
+			
+			/* 选中的是html元素 */
+			:root {
+				font-size: 32px;
+			}
+
+			p {
+				font-size: 1rem;
+			}
+
+
+			
+		</style>
+	</head>
+	<body>
+
+		<div>
+			<p>我有钱</p>
+			<p>我有幸福的家庭</p>
+			<p>我有技术</p>
+			<p>我活好</p>
+			<p></p>
+		</div>
+
+		<ul>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+
+		<ul>
+			<li></li>
+		</ul>
+		
+	</body>
+</html>

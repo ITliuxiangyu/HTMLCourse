@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>外部样式表</title>
+		<!-- 
+			link: 链接 
+			rel: relationship
+			stylesheet: 样式表
+			type： 类型， 表示浏览器的解释方式， 如果不定义的话， 有些CSS效果， 浏览器解释得不一样
+		-->
+		<link rel="stylesheet" type="text/css" href="index02.css">
+		<style>
+			/*@import "index02.css";*/
+			/*@import url(index02.css);*/
+		</style>
+	</head>
+	<body>
+		<!-- 
+			CSS语法是什么？
+
+			选择器 {
+				属性1： 值1；
+				属性2： 值2；
+				属性3： 值3；
+				... ： ...;
+				属性n： 值n；
+			}
+		
+		 -->
+		<!-- 
+			link 和 @import的区别
+			1. link是XHTML中的标签， @import是CSS2.1中出现的CSS语法
+			2. link除了可以链接CSS文件以外，还可以链接其它类型的文件， 比如RSS文件等等
+			3. link， 加载元素的同时加载CSS样式， @import, 当页面中的所有元素都加载完成以后才会加载样式
+			4. @import， 部分低版本浏览器不支持
+			5. link引入的CSS， 元素样式可以进行修改， @import引入的CSS不能进行修改
+
+			综上所述： 使用link
+
+
+		 -->
+
+
+
+		<p>大家早上好，都吃了吗？</p>
+	</body>
+</html>

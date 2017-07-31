@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>创建表</title>
+</head>
+<body>
+
+    <button onclick="creatTable()">创建一个表</button>
+
+
+</body>
+</html>
+<script>
+    var db;
+    //使用transaction方法执行事务
+    function creatTable() {
+        //打开数据库
+        db = openDatabase('Person','1.0','PersonManage',2 * 1024 * 1024,function () {
+            console.log("数据库创建成功");
+        });
+        if(db){
+            var sqlStr = "create table if not exists PersonInfo";
+            sqlStr += "(PersonId unique,Name text,Sex text,age int)";
+            //unique 约束 表示该对象不能重复
+            /*
+            * transaction()方法  事务执行方法
+            * transaction(TransCallback(),ErrorCallback(),SuccessCallback());
+            * 事务执行回调,失败回调,成功的回调
+            * */
+            db.transaction(function (tx) {
+                tx.executeSql(sqlStr);
+            },function () {
+                console.log('执行事务出错!');
+            },function () {
+                console.log("执行事务成功");
+            })
+        }
+    }
+</script>

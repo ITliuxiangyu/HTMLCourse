@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="icon/iconfont.css">
+		<title>Document</title>
+		<style>
+			@font-face {
+				font-family: "waigeFont";
+				/* 如果想兼容所有浏览器，需要下载4中字体， 写法如下 */
+				src: 
+					url(waigeFont.ttf),
+					url(waigeFont.svg),
+					url(waigeFont.woff),
+					url(waigeFont.eot);
+			}
+
+			@font-face {
+				  font-family: "歪哥细体";
+				  src: url('font/webfont.eot'); /* IE9*/
+				  src: url('font/webfont.eot?#iefix'),
+				  url('font/webfont.woff'),
+				  url('font/webfont.ttf') format('truetype'), 
+				  url('font/webfont.svg#webfont') format('svg'); /* iOS 4.1- */
+			}
+
+
+
+			div {
+				font-family: "歪哥细体";
+				font-size: 150px;
+
+
+			  -webkit-font-smoothing: antialiased;
+			  -webkit-text-stroke-width: 0.1px;
+			  -moz-osx-font-smoothing: grayscale;
+			}
+
+			.icon.iconfont.icon-lockers {
+				color: red;
+				font-size: 200px;
+			}
+
+		</style>
+	</head>
+	<body>
+
+		<!-- 
+			font-face是CSS3中允许使用自定义字体的一个模块， 主要是把自定义的web字体嵌入到网页中
+
+			常见的字体格式 .ttf, .svg, .eot, .woff
+
+		 -->
+
+		 <div>大家好其他</div>
+		 <i class="icon iconfont icon-lockers"></i>
+		
+	</body>
+</html>

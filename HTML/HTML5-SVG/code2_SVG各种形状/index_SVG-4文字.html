@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SVG文字</title>
+</head>
+<body>
+    <!--SVG同样可以绘制文字-->
+    <svg version="1.0">
+        <text x="100" y="15" fill="red" transform="rotate(30)">hello</text>
+        <!--x y 代表x y轴坐标-->
+    </svg>
+    <!--路径上的文字-->
+    <svg version="1.0">
+        <path id="path1" d="M 0  50,A 10 10,0,0,0,110 0" fill="none"></path>
+        <text x="10" y="100" fill="red">
+            <textPath href="#path1">hello i love china</textPath>
+        </text>
+    </svg>
+
+    <svg version="1.0">
+        <path id="path2" d="M 20 20 C 90 40,130 40,180 20 S 250 60,280 20" fill="none"></path>
+        <text x="10" y="100" fill="red">
+            <textPath href="#path2">哈哈哈 啦啦啦
+                我是卖报的小行家</textPath>
+        </text>
+    </svg>
+    <!--dx dy定义每个文字的相对定位-->
+    <!--rotate旋转-->
+    <!--textLenght文字长度 会平均分散-->
+    <!--lengthAdjust 属性接受两个值 spacing 和 spacingAndGlyphs -->
+    <svg version="1.0">
+        <text x="10" y="100" fill="red">
+            <tspan dx="100" dy="10 10 10 10" x="10" y="15">hello</tspan>
+            <tspan x="10" y="35" rotate="30">world</tspan>
+            <tspan x="10" y="55" textLength="120" lengthAdjust="spacingAndGlyphs">我是帅哥!</tspan>
+        </text>
+    </svg>
+</body>
+</html>

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+		<style>
+
+			* {
+				margin: 0; 
+				padding: 0;
+			}
+
+			.out {
+				/*height: 100px;*/
+				background: red;
+			}
+
+			.in {
+				height: 50px;
+				background: yellow;
+				width: 80px;
+			}
+
+			a {
+				background: red;
+				width: 200px;
+				height: 300px;
+				margin-left: 50px;
+				margin-right: 50px;
+				margin-top: 50px;
+				margin-bottom: 50px;
+			}
+
+			span {
+				background: orange;
+				padding-left: 100px;
+				padding-right: 100px;
+				/*padding-top: 50px;*/
+				/*padding-bottom: 50px;*/
+			}
+
+			em {
+				background: yellow;
+			}
+
+			strong {
+				background: green;
+			}
+
+			.link {
+				font-size: 0;
+			}
+
+			.link * {
+				font-size: 16px;
+			}
+
+			.first {
+				/* 让元素以行内元素的形式显示 */
+				/*display: inline;*/
+				display: inline-block;
+				background: yellow;
+				padding-top: 50px;
+				width: 500px;
+			}
+			.second {
+				/*display: inline;*/
+				display: inline-block;
+				background: blue;
+			}
+			.third {
+				/*display: inline;*/
+				display: inline-block;
+				background: red;
+			}
+
+			.test {
+				background: blue;
+				/* 让元素以块元素的特征显示 */
+				display: block;
+				width: 200px;
+				height: 50px;
+
+			}
+
+
+		</style>
+	</head>
+	<body>
+		<!-- 
+			块元素（block）
+				1. 默认独占一行(宽度撑满父级)
+				2. 如果不给定高度， 高度由内容决定
+				3. 支持宽高设置， 支持所有的CSS样式设置
+
+				常见的块元素
+					p, div, pre, ul, ol, li, h1-h6, dl, dt, dd...
+
+			行内元素（inline）
+				1. 行内元素可以和行内元素并排显示
+				2. 不支持宽高设置， 大小由内容决定
+				3. 不支持 padding-top, padding-bottom, margin-top, margin-bottom 设置
+				4. 换行会被解析
+
+				常见的行内(内联)元素
+					span, em, strong, a, img, input, label...
+
+			内联块元素（inline-block）:
+				同时具有块元素和行内元素的部分特征
+				1. 如果不设置宽高， 由内容决定宽高
+				2. 可以同排显示
+				3. 换行被解析
+
+		 -->
+		 <div>hello</div>
+		 <p>hi</p>
+		 <ol>
+		 	<li>ni</li>
+		 	<li>hao</li>
+		 	<li>ma</li>
+		 </ol>
+		 <div class="out">
+		 	<div class="in"></div>haha
+		 </div>
+		 <dl style="background: gold;">
+		 	<dt style="-background: red;">黄瓜</dt>
+		 	<dd style="-background: black;">可以吃</dd>
+		 </dl>
+
+		<div class="link">
+			<a href="">百度一下</a>
+			<span>你知道莆田系吗？</span>
+			<em>很牛逼吗？</em>
+			<strong>确实很牛逼。</strong>
+		</div>
+		 
+
+		 <div style="background: black;">hhh</div>
+
+		 <div class="first">first</div>
+		 <div class="second">second</div>
+		 <div class="third">third</div>
+
+		 <a href="" class="test">小电影</a>
+
+		 <!-- 
+			元素嵌套规则
+				1. 块级元素可以嵌套大部分的块级元素， 可以嵌套行内元素
+				2. 行内元素可以嵌套行内元素， 但不能嵌套块元素
+				3. p, dt, h1-h6 不能嵌套块级元素
+				4. 块元素和块元素并列， 行内元素和行内元素并列（同级）
+
+		  -->
+
+
+		
+	</body>
+</html>

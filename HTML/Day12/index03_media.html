@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+		<style>
+
+			div {
+				transition: 3s;
+				width: 400px;
+				height: 400px;
+				background: red;	
+			}
+			
+			/* 
+				not: 取相反状态;
+				<= 600的状态
+			 */
+			/*@media not screen and (min-width: 600px) {
+				div {
+					width: 200px;
+					height: 200px;
+					background: red;
+				}
+			}*/
+
+			/*@media not screen and (max-width: 600px) {
+				div {
+					width: 300px;	
+					height: 600px;
+					background: yellow;
+					border-radius: 50%;
+				}
+			}*/
+			
+			/*
+				当浏览器窗口宽度 大于等于600 小于等于800的时候的状态
+			*/
+			@media only screen and (min-width: 600px) and (max-width: 800px) {
+				div {
+					border-radius: 50%;
+					background: blue;
+					height: 150px;
+				}
+			}
+
+
+
+		</style>
+	</head>
+	<body>
+		<!-- 
+
+		@media not|only mediatype and (expression) and (expression) ...{
+
+			样式
+
+		}
+
+		mediatype:
+			媒体类型
+				all: 所有设备
+				screen: 手机， ipad， 电脑
+				print: 打印设备
+				speech: 阅读器设备
+
+			only: 在什么条件下， 可以省略
+			not: 不在什么条件下
+		 -->
+		
+
+		<div></div>
+		<p>hello</p>
+		
+	</body>
+</html>

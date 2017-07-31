@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>状态伪类选择器</title>
+		<style>
+			
+			/* 选中可用状态下的input */
+			/*input:enabled {
+				background: red;
+			}*/
+
+			/* 选中禁用状态下的input */
+			input:disabled {
+				background: gray;
+			}
+			
+			/* 选中光标所在的input */
+			input:focus {
+				background: blue;
+			}
+			
+			/* 选中被选中的input， 针对radio和checkbox */
+			input:checked {
+				margin-left: 200px;
+			}
+
+			
+
+		</style>
+	</head>
+	<body>
+		用户名：<input type="text"><br>
+		密码： <input type="password"><br>
+		<input type="text" disabled><input type="text">
+		<br>
+
+		<input type="radio" name="fruit" value="apple">
+		<input type="radio" name="fruit" value="orange">
+		<br>
+		<input type="checkbox">
+		
+	</body>
+</html>

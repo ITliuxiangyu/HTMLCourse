@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+		<style>
+			* {
+				padding: 0;
+				margin: 0;
+			}
+			
+			div {
+				width: 200px;
+				height: 200px;
+				border: 5px solid red;
+				background: blue;
+				margin: 50px;
+				padding: 50px;
+			}
+
+			.up {
+				/* 
+					怪异盒模型 
+					设置的宽高， 包含 border+padding+content
+				*/
+				box-sizing: border-box;
+			}
+
+			.down {
+				box-sizing: content-box;
+			}
+
+		</style>
+	</head>
+	<body>
+		<!-- 
+			IE6-7下会出现怪异盒模型， 如果兼容IE-6-7， 需要设置 box-sizing： border-box
+		 -->
+		<div class="up"></div>
+		<div class="down"></div>
+
+
+	</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <p id="demoP"></p>
+</body>
+</html>
+<!--sessionStorage只能保存临时回话的用户数据,如果我们想下次用户再打开浏览器,登录我们网站的时候还有我们保存的数据,那么sessionStorage就不能满足我们的需求,那么我们就要使用localStorage来存储数据-->
+<!--localStorage存储的数据可以长时间保存到浏览器,直到手动清除为止-->
+<script>
+    //localStorage使用方式和sessionStorage类似
+    console.log(localStorage);
+    //方式一 使用setItem方法
+    // localStorage.setItem('userName','zhouaoqi');
+    //方式二 直接.方法
+    localStorage.userName = '周奥琪';
+
+    //取值方法一
+    //var data = localStorage.getItem('userName');
+    //取值方法二
+    var data = localStorage.userName;
+
+    //其他方法 remove() clear()
+
+    document.getElementById('demoP').innerText = data;
+</script>

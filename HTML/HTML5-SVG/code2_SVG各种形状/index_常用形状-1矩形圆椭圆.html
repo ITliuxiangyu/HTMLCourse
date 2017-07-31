@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SVG常用形状</title>
+    <!--
+    矩形 <rect>
+    圆形 <circle>
+    椭圆 <ellipse>
+    线 <line>
+    折线 <polyline>
+    多边形 <polygon>
+    路径 <path>
+    -->
+</head>
+<body>
+
+    <!--矩形-->
+    <svg version="1.0">
+        <rect height="100" width="100" fill="red" stroke-width="5" stroke="rgba(0,0,0,1)" opacity="1"></rect>
+        <!--height width 定义宽高 fill为填充颜色 stroke-width矩形边框的宽度 stroke定义边框的颜色-->
+    </svg>
+
+    <svg version="1.0">
+        <rect x="10" y="10" height="100" width="100" fill="blue" stroke-width="5" stroke="red" fill-opacity=".3" stroke-opacity=".9"></rect>
+        <!--x代表矩形距浏览器左侧的位置 y代表距浏览器顶端的位置-->
+        <!--填充和边框都有自己的透明设置 fill-opacity stroke-opacity-->
+    </svg>
+
+    <!--圆角矩形-->
+    <svg version="1.0">
+        <rect x="10" y="10" rx="10"  height="100" width="100" fill="blue"></rect>
+    <!--rx ry代表圆角大小 其实随便设置一个就行-->
+    </svg>
+
+    <!--圆形-->
+    <svg version="1.0">
+        <circle r="30"></circle><!--不设置圆心坐标默认是0 0 显示不出来是个扇形-->
+    </svg>
+    <svg version="1.0">
+        <circle cx="50" cy="50" r="40"></circle>
+        <!--cx cy 圆心的坐标,圆心的坐标给的一定要比半径大 要不绘制范围不够-->
+    </svg>
+    <svg version="1.0">
+        <circle cx="50" cy="50" r="40" stroke="red" stroke-width="3px" fill="green"></circle>
+    </svg>
+
+    <!--椭圆 ellipse-->
+    <svg version="1.0">
+        <ellipse cx="80" cy="50" rx="80" ry="50"></ellipse>
+        <!--椭圆和圆形很相似 cx 和 cy 也必须大于rx ry-->
+        <!--rx代表水平半径 ry代表垂直半径-->
+    </svg>
+    <!--叠加的椭圆-->
+    <svg version="1.0">
+        <ellipse cx="140" cy="100" rx="120" ry="30" fill="purple"></ellipse>
+        <ellipse cx="135" cy="70" rx="90" ry="20" fill="lime"></ellipse>
+        <ellipse cx="130" cy="45" rx="70" ry="15" fill="yellow"></ellipse>
+    </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+        <ellipse cx="140" cy="50" rx="100" ry="30" fill="blue"></ellipse>
+        <ellipse cx="140" cy="50" rx="90" ry="20" fill="white"></ellipse>
+    </svg>
+</body>
+</html>

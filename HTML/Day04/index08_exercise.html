@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+		<style>
+			
+			table, th, td {
+				border: 2px solid black;
+			}
+
+			/*th:hover, td:hover {
+				background-color: red;
+				cursor: pointer;
+			}*/
+
+			/*table:hover td, table:hover th {
+				background-color: orange;
+			}*/
+
+			td:hover+td {
+				background-color: red;
+			}
+
+		</style>
+	</head>
+	<body>
+		
+		<!-- 表格 -->
+		<table>
+			<!-- 表格标题 -->
+			<caption>吸烟喝酒与寿命的关系</caption>
+			<!-- 表格的行 -->
+			<tr>
+				<!-- 表格的内容， th默认样式字体加粗， 文本居中 -->
+				<th>姓名</th>
+				<th>吸烟？</th>
+				<th>喝酒？</th>
+				<th>寿命</th>
+			</tr>
+			<tr>
+				<!-- 表格的内容 -->
+				<td>雷锋</td>
+				<td>否</td>
+				<td>否</td>
+				<td>22</td>
+			</tr>
+			<tr>
+				<td>毛泽东</td>
+				<td>是</td>
+				<td>否</td>
+				<td>83</td>
+			</tr>
+			<tr>
+				<td>张学良</td>
+				<td>是</td>
+				<td>是</td>
+				<td>109</td>
+			</tr>
+
+
+		</table>
+
+	</body>
+</html>

@@ -1,0 +1,10 @@
+fieldset{
+    width: 400px;
+}
+.loginBtn{
+    margin-top: 20px;
+    width: 60px;
+}
+.statusSpan{
+    color: darkgray;
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>列表样式</title>
+		<style>
+			ul {
+				/* 
+					列表样式类型 
+					none: 没有类型;
+					disc: 实心圆;
+					circle: 空心圆;
+					square: 实心方块;
+					lower-alpha: 小写的英文字母;
+					upper-alpha: 大写的英文字母;
+					decimal: 数字;
+					decimal-leading-zero: 开头是0;
+				*/
+				list-style-type: decimal-leading-zero;
+				
+				/* 图片 */
+				list-style-image: url('girl.jpg');
+
+				list-style-position: inside;
+			}
+			
+			li {
+				background: red;
+			}
+
+		</style>
+	</head>
+	<body>
+		<ul>
+			<li>黄瓜</li>
+			<li>菠萝</li>
+			<li>榴莲</li>
+		</ul>
+		
+	</body>
+</html>

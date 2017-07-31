@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>取出sessionStorage数据</title>
+</head>
+<body>
+
+    <p>姓名:<span id="nameSpan"></span></p>
+    <p>年龄:<span id="ageSpan"></span></p>
+    <p>性别:<span id="sexSpan"></span></p>
+    <p>电话:<span id="phoneSpan"></span></p>
+
+</body>
+</html>
+<script>
+    document.getElementById('nameSpan').innerText = sessionStorage.name;
+    document.getElementById('ageSpan').innerText = sessionStorage.age;
+    document.getElementById('sexSpan').innerText = sessionStorage.sex;
+    document.getElementById('phoneSpan').innerText = sessionStorage.phone;
+
+</script>

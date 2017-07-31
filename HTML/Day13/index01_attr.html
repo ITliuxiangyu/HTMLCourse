@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>CSS3.0属性选择器</title>
+		<style>
+			/*
+				[attr^="val"]:
+					选中具有属性attr， 并且值以val开头的元素
+			*/
+			div[class^="v"] {
+				background: red;
+			}
+
+			/*
+				[attr$="val"]:
+					选中具有属性attr， 并且值以val结尾的元素
+			*/
+			div[class$="um1 num2"] {
+				background: blue;
+			}
+			
+			/*
+				属性值中包含a的元素
+			*/
+			div[class~="a"] {
+				background: yellow;
+				height: 200px;
+			}
+
+
+		</style>
+	</head>
+	<body>
+		<div class="val3 val val2 yellowGua">1</div>
+		<div class="num num1 num2">2</div>
+		<div class="abc aaa ddd cgh">3</div>
+	</body>
+</html>

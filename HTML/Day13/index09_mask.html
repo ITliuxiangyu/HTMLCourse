@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+		<style>
+			
+			div {
+				width: 400px;
+				height: 400px;
+				border: 2px solid black;
+				background: url(test.jpeg) no-repeat;
+				/* 背景图片尺寸大小 */
+				/* 第一个值控制宽度， 第二个值控制高度 */
+				background-size: 100% 100%;
+				
+				/* 
+					蒙版图片 
+					蒙版图片的透明部分遮住的区域不能够显示
+					不透明的部分遮住的内容可以显示
+				*/
+				-webkit-mask-image: url(mask.png);
+				/* 蒙版图片平铺效果 */
+				-webkit-mask-repeat: no-repeat;
+
+				/*-webkit-column-count: 5;
+				-moz-column-count: 5;
+				-o-column-count: 5;
+				column-count: 5;*/
+			}
+
+		</style>
+	</head>
+	<body>
+		
+		<div></div>
+
+		<!-- 
+			标准浏览器
+				FireFox， Chrome， Opera， Safari...
+
+			IE浏览器
+
+			内核，渲染引擎
+
+			不同内核的浏览器都有各自的私有属性
+			CSS私有属性前缀
+
+			IE： -ms
+			FireFox： -moz
+			Chome， Safari： -webkit
+			Opera， -o
+		 -->
+
+		
+	</body>
+</html>

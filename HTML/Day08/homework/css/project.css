@@ -1,0 +1,52 @@
+#box {
+	width: 604px;
+	/*background: yellow;*/
+	margin: 100px auto 0;
+}
+
+.header>span {
+	display: inline-block;
+	height: 25px;
+	font-size: 17px;
+	border-left: 3px solid #59afe4;
+	line-height: 25px;
+	color: #827e7e;
+	padding-left: 7px;
+}
+
+.header {
+	border-bottom: 1px solid #ddd;
+	padding-bottom: 5px;
+}
+
+.content {
+	/* 解决自己元素浮动对父级造成的影响 */
+	overflow: hidden;
+}
+
+.content>label {
+	float: left;
+	width: 116px;
+	height: 36px;
+	line-height: 36px;
+	text-align: right;
+	/*background: red;*/
+	font-size: 13px;
+	color: #33335f;
+}
+
+.content>input {
+	float: left;
+	width: 298px;
+	height: 32px;
+	border: 2px solid blue;
+	border-radius: 4px;
+	margin-left: 8px;
+}
+
+.content {
+	margin-top: 19px;
+}
+
+
+

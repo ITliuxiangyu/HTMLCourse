@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>喷枪打字效果</title>
+		<style>
+			* {
+				padding: 0;
+				margin: 0;
+			}
+
+			body {
+				background: pink;
+			}
+
+			p {
+				/*height: 200px;*/
+				font-size: 3em;
+				color: blue;
+				font-weight: bolder;
+				/*line-height: 200px;*/
+				/*text-align: center;*/
+				/* 相对于自身的字体大小 */
+				width: 10em;
+				/*margin: 200px auto 0;*/
+				white-space: nowrap;
+				overflow: hidden;
+				border-right: 4px solid black;
+				/*background: red;*/
+				/* 
+					steps
+					第一个参数： 没两帧动画之间的步数
+					第二个参数： 每一步动画的开始或者结束的时候发生阶跃， 默认值end
+				*/
+				animation: textWidth 10s steps(10, end),
+							cursor .2s infinite;
+				/*animation: textWidth 10s steps(10, start);*/
+
+				
+				
+			}
+
+			@keyframes textWidth {
+				0% {
+					width: 0em;
+				}
+
+				/*50% {
+					width: 5em;
+				}*/
+
+				100% {
+					width: 10em;
+				}
+			}
+
+			@keyframes cursor {
+				50% {
+					border: none;
+				}
+			}
+
+		</style>
+	</head>
+	<body>
+		
+		<p>陈俊启爱和露露在一起</p>
+
+		
+	</body>
+</html>

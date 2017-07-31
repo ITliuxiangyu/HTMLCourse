@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>内部样式表和内联样式表</title>
+		<link rel="stylesheet" href="">
+
+		<!-- 内部样式表， 把样式写到head下面的style标签中 -->
+		<style>
+			div {
+				width: 300px;
+				height: 500px;
+				background-color: red;
+				/* 边框圆角（弧度） */
+				border-radius: 10px;
+			}
+
+		</style>
+
+	</head>
+	<body>
+		
+		<!-- div, span 无意义标签， div是使用最多的标签元素，没有之一， div和span元素都是配合CSS进行使用的， 如果不设置样式， 里面的内容没有任何效果， 现在都是通多div+CSS进行网页布局 -->
+		<div>马上要春节了， 一年一次的大长假要到来了！！！</div>
+
+		<!-- 内联样式， 把样式写在元素的开始标签中 -->
+		<p style="background-color: red; height: 200px; width: 100px;">来个<span style="background-color: yellow; color: white;">美女</span>吧</p>
+
+
+		<!-- 
+			外部样式表： 单独创建CSS文件，html文件可以通过link标签引入CSS文件， 可以被共用， 该方式符合w3c推荐的 行为， 样式， 结构三者相分离的思想
+
+			内部样式表： 把元素的样式写在head下面的style标签中， 该样式只能被该html使用， 样式较少 或者进行简单的测试的时候可以使用
+
+			内联样式表： 不推荐使用
+
+		 -->
+
+		 <!-- 
+			离元素最近的样式， 优先级最高(在选择器优先级一样的情况下)
+			内联样式>内部样式>外部样式
+		  -->
+
+
+
+	</body>
+</html>

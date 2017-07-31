@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>清浮动</title>
+		<style>
+			* {
+				padding: 0;
+				margin: 0;
+			}
+
+			.first {
+				width: 200px;
+				height: 200px;
+				background: red;
+				float: left;
+			}
+
+			.second {
+				width: 150px;
+				height: 150px;
+				background: blue;
+				/*
+					clear: left; 清除周围左浮动元素对该元素造成的影响
+					clear: right; 清除周围右浮动元素对该元素造成的影响
+					clear: both; 清除周围元素左右浮动元素对该元素造成的影响
+				*/
+				clear: both;
+			}
+
+			.parent {
+				/*
+					清除子级浮动元素对父级的影响
+					第一种方法： 给父级添加高度
+				*/
+				/*height: 156px;*/
+
+				/*
+					第二种方法： display: inline-block;
+				*/
+				/*display: inline-block;*/
+				width: 200px;
+				margin: 0 auto;
+				background: red;
+				border: 2px solid black;
+				/*
+					第三种方法： 父级添加浮动
+				*/
+				/*float: left;*/
+
+				/*
+					第六种方案
+					如果兼容ie6， 7， 需要添加 zoom： 1； 或者给元素设置宽度
+				*/
+				/*overflow: hidden;
+				width: 100%;
+				zoom: 1;*/
+
+				/*
+					第七种方案
+				*/
+				/*zoom: 1;*/
+
+			}
+
+			.parent>.child {
+				width: 150px;
+				height: 150px;
+				background: yellow;
+				border: 3px solid blue;
+				float: left;
+				/*margin: 0 auto;*/
+			}
+			
+			/* 第五种 */
+			/*.clear {
+				clear: both;
+			}*/
+
+			/*
+				第七种方式
+			*/
+			/*.parent::after {
+				content: "";
+				display: block;
+				clear: both;
+			}*/
+
+		</style>
+	</head>
+	<body>
+
+		<div class="first"></div>
+		<div class="second"></div>
+
+		<div class="parent">
+			<div class="child"></div>
+			<!-- 
+				第四种解决方案
+			 -->
+			 <!-- <br clear="all"> -->
+
+			 <!-- 
+				第五种方案
+					空标签清浮动
+			  -->
+			  <!-- <div class="clear"></div> -->
+
+		</div>
+
+		<!-- 
+			清除子级浮动对父级元素的影响
+			解决方案：
+				1. 给父级添加高度， 缺点： 扩展性不好
+				2. display： inline-block;
+				缺点： ie6， ie7不支持，margin： auto； 失效
+				3. 给父级添加浮动
+				缺点：margin： auto；失效
+				4. 添加br标签
+				缺点： 不符合w3c推荐， 样式， 行为， 结构三者相分离的思想
+				5. 空标签清浮动
+				缺点： ie6下有一个最小19px的间隙， 解决以后还有一个2px的bug
+
+				6. overflow: hidden;
+				需要通过设置宽度， 或者 zoom 开兼容ie6， ie7
+
+				7. 添加伪元素 （目前来说最完美）
+				父级元素::after { content: ""; display: block; clear: both};
+				父级元素 { zoom: 1};
+
+				content: ""; ie6, ie7不支持
+				zoom: 1; FF不支持 
+
+
+
+
+		 -->
+
+		 <!-- 
+			浏览器： ie浏览器
+					标准浏览器： FF（火狐）， Safari， Chrome（谷歌）， Opera（欧朋）。。。
+		  -->
+
+
+		
+	</body>
+</html>

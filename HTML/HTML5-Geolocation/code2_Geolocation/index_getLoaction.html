@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>获取位置信息</title>
+</head>
+<body>
+
+    <button onclick="getLocationInHTML5()">
+        获取位置信息
+    </button>
+    <div id="locationDiv"></div>
+</body>
+</html>
+<script>
+    function getLocationInHTML5() {
+        if(navigator.geolocation){
+            navigator.geolocation.getCurrentPosition(function (data) {
+                console.log(data);
+                if (data.coords){
+                    var locationDiv = document.querySelector('#locationDiv');
+                    var p_latitude = document.createElement('p');
+                    var span_latitude = document.createElement('span');
+                    var p_longitude = document.createElement('p');
+                    var span_longitude = document.createElement('span');
+                    var p_accuracy = document.createElement('p');
+                    var span_accuracy = document.createElement('span');
+                    span_latitude.innerText = "您的纬度为:" + data.coords.latitude;
+                    span_longitude.innerText = "您的经度为:" + data.coords.longitude;
+                    span_accuracy.innerText = "您的位置精度为:" + data.coords.accuracy;
+                    p_accuracy.appendChild(span_accuracy);
+                    p_latitude.appendChild(span_latitude);
+                    p_longitude.appendChild(span_longitude);
+                    locationDiv.appendChild(p_accuracy);
+                    locationDiv.appendChild(p_latitude);
+                    locationDiv.appendChild(p_longitude);
+                    //也可以使用标签字符串拼接的方法来写
+                }
+            },function (error) {
+                var locationDiv = document.querySelector('#locationDiv');
+                var p_error = document.createElement('p');
+                var span_message = document.createElement('span');
+                switch (error.code){
+                    case 0:
+                        span_message.innerText = "未知错误信息!";
+                        break;
+                    case 1:
+                        span_message.innerText = "您拒绝了定位的服务请求!";
+                        break;
+                    case 2:
+                        span_message.innerText = "没有获取到正确的未知信息!";
+                        break;
+                    case 3:
+                        span_message.innerText = "获取位置的操作超时!";
+                        break;
+                }
+                p_error.appendChild(span_message);
+                locationDiv.appendChild(p_error);
+            })
+        }
+    }
+</script>

@@ -1,0 +1,78 @@
+.box {
+    position: relative;
+    min-width: 100%;
+}
+
+.box .center {
+    transition: 2s linear;
+}
+
+.box .up, .box .center, .box .bottom {
+    position: absolute;
+    width: 71.4979%;
+    padding: 0;
+    left: 0; right: 0;
+}
+
+.box .center {
+    /*background: yellow;*/
+    height: 70.7763%;
+}
+
+.box .center .fl, .box .center .fr {
+    width: 100%;
+    height: 50%;
+}
+
+.box .center .fl img:nth-child(odd), .box .center .fr img:nth-child(even) {
+    width: 61.5077%;
+}
+
+.box .center .fl img:nth-child(even), .box .center .fr img:nth-child(odd) {
+    width: 36.5964%;
+}
+
+.box .center img {
+    height: 32.4623%;
+}
+
+.box .up {
+    top: 6.8493%;
+    height: 9.1324%;
+    /*background: yellow;*/
+}
+
+.box .up img:first-child {
+    position: absolute;
+    top: 0;
+    height: 54.6875%;
+    width: 25.071%;
+}
+
+.box .up img:last-child {
+    position: absolute;
+    bottom: 0;
+    height: 31.8125%;
+    width: 49.7873%;
+}
+
+
+.box .center {
+    top: 19.4064%;
+}
+
+.box .bottom {
+    top: 96.5753%;
+    height: 1.0483%;
+}
+
+.box .bottom img {
+    height: 100%;
+    width: 100%;
+}
+
+@media screen and (max-height: 566px) {
+    .box .center {
+        width: 64.6643%;
+    }
+}

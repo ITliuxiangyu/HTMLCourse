@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>伪类， 伪元素选择器</title>
+		<style>
+			/* 
+				未被点击状态
+				给定了超链接属性的元素添加样式， 元素（超链接）必须没有被点击过
+			 */
+			a:link {
+				color: yellow;
+			}
+
+
+			
+			/*
+				定义了超链接的被点击过的元素的状态
+			*/
+			a:visited {
+				color: red;
+			}
+
+			/* 鼠标悬浮在元素上方时的状态 */
+			a:hover {
+				color: purple;
+				font-size: 100px;
+			}
+			
+			
+			/*
+				鼠标按下时的状态
+			*/
+			a:active {
+				color: brown;
+				font-size: 50px;
+			}
+
+			/*
+				这几个伪类选择器的顺序
+				爱恨原则： Love-Hate
+				link  visited hover active
+			*/
+
+			/* ------------------------- 这是淫荡的分割线----------------*/
+			/*
+				伪元素选择器 可以写一个:(冒号), 也可以写两个:(冒号);
+			*/
+			/*
+				给元素的内容前面添加内容
+			*/
+			.waige::before {
+				content: "你好， ";
+				color: blue;
+			}
+			
+			/*
+				给元素的内容后面添加内容
+			*/
+			.waige::after {
+				content: "， 我喜欢你好久了！！";
+				color: red;
+			}
+			
+			/*
+				选中的是元素的内容的第一个字符
+			*/
+			.article::first-letter {
+				font-size: 50px;
+				color: blue;
+				/* 字体样式： 斜体 */
+				font-style: italic;
+			}
+			
+			/* 选中元素的内容的第一行内容 */
+			.article::first-line {
+				background-color: purple;
+			}
+
+		</style>
+	</head>
+	<body>
+
+		<!-- 
+			伪类选择器： 给元素不同状态下添加不同的效果
+			伪元素选择器： 给元素的部分内容添加样式
+		 -->
+
+		 <a href="http://www.hao123.com">好123</a>
+		 <a href="http://www.taobao.com">淘宝</a>
+
+
+		 <p class="waige">歪哥</p>
+
+		 <p class="article">就是打发了就爱说多了法是否记得拉上的放假啦开始的减肥按时交电费案发就年政府和我决斗你发货暗室逢灯那看来是覅偶尔还能打家都是佛诶角度佛奥式分解诶那是看东方男科欧豪佛尔上大幅落后阿飞解放和骄傲维护费你发和偶偶访问你说的咖啡机了爱上覅婀娜发动机发了uoiwfjsa分红额啥等级分类若发色婕拉奥士大夫数量的咖啡机爱上对方了若发了发送来看哈舒服观看撒娇的划分与哈安徽师范路口燃烧了回复电话费收费小妞家的事切勿啥都好符合欧阿道夫了阿飞沙龙东方而偶偶咋的回复未回复哈数量的回复按时发发动机号萨付款欧诶呦爱的飞鸿发生打架佛诶我还有丰东股份空格以幅度是卡号发饿哦以uafshdfwyefasdjf撒娇的合法五十度灰个啥大客户 送达后付款</p>
+		
+	</body>
+</html>

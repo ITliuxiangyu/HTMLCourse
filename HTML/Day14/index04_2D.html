@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>transform-2d</title>
+		<style>
+			.content {
+				width: 400px;
+				height: 400px;
+				margin: 100px auto 0;
+				border: 2px solid black;
+				background: url('img/bg-grid.jpg') no-repeat;
+				background-size: 100% 100%;
+				position: relative;
+				overflow: hidden;
+			}
+
+			.content img {
+				position: absolute;
+				width: 120px;
+				left: 0; top: 0; bottom: 0; right: 0; margin: auto;
+			}
+
+			.content img:first-child {
+				opacity: 0.3;
+			}
+
+			.content img:last-child {
+				opacity: 0.7;
+				/* 平移 */
+				/*transform: translateX(-50px) translateY(50px);*/
+				/*transform: translate(-50px, 100px);*/
+
+				/* 缩放 */
+				/*transform: scaleX(0.5) scaleY(0.5);*/
+				/*transform: scale(0.5, 0.8);*/
+				/*transform: scale(0.5);*/
+
+				/* 倾斜 */
+				/*
+					第一个值代表水平方向拉伸角度
+					第二个值代表垂直方向拉伸角度
+				*/
+				/*transform: skew(45deg, 45deg);*/
+				/*transform: skewX(45deg) skewY(20deg);*/
+
+				/*
+					旋转
+					顺时针旋转， 绕着z轴
+					注意事项： 先旋转再平移和先平移再旋转效果是不一样的， 旋转元素的时候， 元素本身的坐标是会发生变化
+				*/
+				/*transform: rotate(45deg);*/
+				
+				/* 复合写法 */
+				/*transform: translate(100px, 50px) rotate(45deg) skew(1deg, 1deg) scale(0.5);*/
+				
+				/* 
+					可以改变元素的形变基准点
+					值可以为像素， 也可以为： top left, top center, top right, left center, center center, right center, bottom left, bottom center, bottom right
+					可以改变旋转， 缩放， 倾斜的基准点
+				*/
+				transform-origin: top center;
+				/*transform-origin: 10px 100px;*/
+				transform: rotate(45deg);
+
+
+
+			}
+
+		</style>
+	</head>
+	<body>
+
+		<div class="content">
+			<img src="img/cardKingClub.png" alt="">
+			<img src="img/cardKingClub.png" alt="">
+		</div>
+		
+	</body>
+</html>

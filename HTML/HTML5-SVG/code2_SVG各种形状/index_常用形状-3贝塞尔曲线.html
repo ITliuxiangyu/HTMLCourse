@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SVG path</title>
+</head>
+<body>
+    <!--path命令-->
+    <!--M: moveto 移动到 参数 x,y-->
+    <!--L: lineto 画线到 参数 x,y +....-->
+    <!--H: horizontal lineto 水平线到 参数 x + ...-->
+    <!--V: vertical lineto 垂直线到 参数 y + ...-->
+    <!--Z: 闭合-->
+    <svg version="1.0" height="200px">
+        <path d="M 0 0 L 35 100 L 125 50 Z" fill="none" stroke-width="1" stroke="red"></path>
+    </svg>
+    <!--曲线命令-->
+    <!--C: curveto 三次贝塞尔曲线到 参数 (x1 y1 x2 y2 x y) + ... 前两个是控制点后面是实际点坐标,虚虚实实-->
+    <!--S: smooth curveto 光滑三次贝塞尔曲线到 参数 (x2 y2 x y) + ... S指令会自动补出一个对称的控制点,一般和C配合-->
+    <!--Q: quadratic Bezier curveto 二次贝塞尔曲线 参数(x1 y1 x y) + ...-->
+    <!--T: smooth quadratic Bezier curveto 光滑二次贝塞尔曲线 参数(x y) + ...-->
+    <!--A: elliptical arc 椭圆弧 参数(rx ry x-axis-roation large-arc-flag sweep-flag x y) + -->
+    <!--贝塞尔曲线-->
+    <svg version="1.0" height="200px">
+        <path d="M 10,10 C 90 40,120 40,180 10" fill="none" stroke-width="1" stroke="red"></path>
+    </svg>
+    <!--C 和 S一起使用 厕所组合-->
+    <svg id="svg" width="500" height="100">
+        <path d="M 20 20 C 90 40,130 40,180 20 S 250 60,280 20" stroke="red" fill="none" style="stroke-width: 2px;"></path>
+        <text x="90" y="60">C</text>
+        <text x="230" y="60">S</text>
+    </svg>
+    <!--二次贝塞尔曲线-->
+    <svg id="svg" width="500" height="100">
+        <path d="M 20 20 Q 30 90,200 20" stroke="red" fill="none" style="stroke-width: 2px;"></path>
+    </svg>
+    <!--二次贝塞尔光滑曲线-->
+    <svg id="svg" width="500" height="200">
+        <path d="M 10 10,Q 50 30 120 10,T 280 30" stroke="red" fill="none" style="stroke-width: 2px;"></path>
+    </svg>
+    <!--A-->
+    <svg version="1.0">
+        <!--M40 20代表开始的位置 最后的70 70是结束的点的位置-->
+        <!--弧线的半径有A指令的两个数值决定。第一个参数是rx，水平方向上的半径，第二个参数是ry，垂直方向上的半径。如果rx和ry设置为相同的值，那么将得到一个圆形的弧线。rx和ry设置为不同的值将得到一个椭圆形的弧线。
+A指令上的第三个参数是x-axis-rotation。这个参数用于设置弧线X轴方向上的旋转。通常不需要改变这个参数，它的默认值为0。
+第四和第五个参数分别为large-arc-flag和sweep-flag。它们是两个标志位。我们知道，从A点到B点绘制一条弧线，可以得到两条不同的弧线。一条较大，另一条较小。large-arc-flag就是用于决定到底是绘制较大的那一条弧线还是绘制较小的那一条弧线-->
+        <!--<path d="M40,20  A30,30 0 0,0 70,70"-->
+              <!--style="stroke: #cccc00; stroke-width:2; fill:none;">-->
+        <!--</path>-->
+
+        <path d="M40,20  A 30 50,0 0 0,100 20"
+              style="stroke: #00ff00; stroke-width:2;" fill="red"></path>
+
+        <!--<path d="M40,20  A30,30 0 1,0 70,70"-->
+              <!--style="stroke: #ff0000; stroke-width:2; fill:none;"></path>-->
+
+        <!--<path d="M40,20  A30,30 0 0,1 70,70"-->
+              <!--style="stroke: #0000ff; stroke-width:2; fill:none;"></path>-->
+    </svg>
+</body>
+</html>

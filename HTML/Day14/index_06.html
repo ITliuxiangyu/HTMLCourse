@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>transform-2d</title>
+		<style>
+			.content {
+				transform-style: preserve-3d;
+				width: 400px;
+				height: 400px;
+				margin: 100px auto 0;
+				border: 2px solid black;
+				background: url('img/bg-grid.jpg') no-repeat;
+				background-size: 100% 100%;
+				position: relative;
+				/* 透视的位置（相当于眼睛的位置） */
+				/*perspective-origin: 0 0;*/
+	
+				/* 景深 */
+				perspective: 1px;
+			}
+
+			.content img {
+				position: absolute;
+				width: 120px;
+				left: 0; top: 0; bottom: 0; right: 0; margin: auto;
+			}
+
+			.content img:first-child {
+				opacity: 0.3;
+			}
+
+			.content img:last-child {
+				opacity: 0.7;
+				transform: rotateX(45deg);
+			}
+
+		</style>
+	</head>
+	<body>
+
+		<div class="content">
+			<img src="img/cardKingClub.png" alt="">
+			<img src="img/cardKingClub.png" alt="">
+		</div>
+		
+	</body>
+</html>

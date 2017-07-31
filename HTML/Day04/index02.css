@@ -1,0 +1,11 @@
+p {
+	/* css中注释写法 */
+	/* 背景样色 */
+	background-color: red;
+	/* 宽度 */
+	width: 200px;
+	/* 高度 */
+	height: 300px;
+	/* 字体大小 */
+	font-size: 30px;
+}

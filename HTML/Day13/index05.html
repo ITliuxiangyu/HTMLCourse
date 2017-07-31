@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>其它选择器</title>
+		<style>
+			
+			/* 选中类名中有top的div */
+			/*div.top {
+				height: 200px;
+				background: red;
+			}*/
+
+			/*div.top.blue {
+				height: 200px;
+				background: red;
+			}*/
+
+			/*#test.top {
+				background: blue;
+			}*/
+
+			/*.top#test {
+				background: red;
+			}*/
+			
+			/*
+				通用兄弟选择器
+				选择p下面的所有同级div元素
+			*/
+			p.top~div {
+				height: 100px;
+				background: yellow;
+			}
+			
+			/* 鼠标放到p元素上时， 后面的div变成蓝色 */
+			p.top:hover~div {
+				background: blue;
+			}
+
+			p.top {
+				background: yellow;
+			}
+
+			p {
+				/*background: red;*/
+			}
+
+			ol>li:not([class="red"]) {
+				background: blue;
+				margin-bottom: 20px;
+			}
+
+			/* 否定伪类选择器， 除了div以外的所有元素 */
+			:not(div) {
+
+			}
+	
+			/* 选中bottom下面除了p标签之外的其他元素 */
+			.bottom>:not(p) {
+				background: pink;
+				margin-bottom: 20px;
+			}
+			
+			/*
+				目标伪类选择器
+				通过a标签跳转到该元素上时的样式
+			*/
+			p:target {
+				height: 200px;
+				font-size: 100px;
+				background: blue;
+			}
+
+		</style>
+	</head>
+	<body>
+		<p id="hello">哈哈</p>
+
+		<div class="top red">
+			<p class="top">hello</p>
+			<ul></ul>
+			<ol></ol>
+			<div>大家好</div>
+		</div>
+
+		<div class="top blue" id="test">蓝色</div>
+
+		<!-- 否定伪类选择器  -->
+		<ol>
+			<li>1</li>
+			<li class="red">2</li>
+			<li>3</li>
+			<li>4</li>
+		</ol>
+
+		<div class="bottom">
+			<div>我是div</div>
+			<p>你是p</p>
+			<ol>我是ol</ol>
+			<ul>我是ul</ul>
+		</div>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<a href="#hello">跳到p</a>
+		
+	</body>
+</html>

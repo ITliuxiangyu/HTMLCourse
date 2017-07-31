@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>插入一条数据</title>
+</head>
+<body>
+
+    <button onclick="insertTable()">插入一条数据</button>
+
+
+</body>
+</html>
+<script>
+    var db;
+    function insertTable() {
+        //打开数据库
+        db = openDatabase('Person','1.0','PersonManage',2 * 1024 * 1024,function () {
+            console.log("数据库创建成功");
+        });
+        if(db){
+            var sqlStr = "insert into PersonInfo values";
+            sqlStr += "(?,?,?,?)";
+            db.transaction(function (tx) {
+                /*
+                * executeSql()方法 SQL语句执行方法
+                * executeSql(strSQL,[对应的对象],SuccessCallback(),ErrorCallback());
+                * */
+                tx.executeSql(sqlStr,[3,'张三','男',25],function () {
+                    console.log("一条记录添加成功!");
+                },function () {
+                    console.log("记录添加失败!")
+                });
+            },function () {
+                console.log('执行事务出错!');
+            },function () {
+                console.log("执行事务成功");
+            })
+        }
+    }
+</script>

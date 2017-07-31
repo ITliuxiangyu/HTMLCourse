@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+    </head>
+    <body>
+        <svg>
+            <defs>
+                <!-- 水平渐变 -->
+                <linearGradient id="gradient1" x1="0" y1="0" x2="100%" y2="0">
+                    <stop offset="0%" stop-color="red" />
+                    <stop offset="50%" stop-color="blue" />
+                    <stop offset="100%" stop-color="yellow" />
+                </linearGradient>
+            </defs>
+            <rect x="10" y="10" width="200" height="100" fill="url(#gradient1)" />
+        </svg>
+
+        <svg>
+            <defs>
+                <!-- 垂直渐变 -->
+                <linearGradient id="gradient2" x1="0" y1="0" x2="0" y2="100%">
+                    <stop offset="0%" stop-color="red" />
+                    <stop offset="50%" stop-color="blue" />
+                    <stop offset="100%" stop-color="yellow" />
+                </linearGradient>
+            </defs>
+            <rect x="10" y="10" width="200" height="100" fill="url(#gradient2)" />
+        </svg>
+
+        <svg>
+            <defs>
+                <!-- 对角渐变 -->
+                <linearGradient id="gradient3" x1="0" y1="0" x2="1" y2="1">
+                    <stop class="stop1" offset="0%" />
+                    <stop offset="50%" stop-color="blue" stop-opacity=".7" />
+                    <stop offset="100%" stop-color="yellow" />
+                </linearGradient>
+                <style>
+                    .stop1 {
+                        stop-color: white;
+                    }
+                </style>
+            </defs>
+            <rect x="10" y="10" width="200" height="100" fill="url(#gradient3)" stroke-width="10" stroke="url(#gradient3)" />
+        </svg>
+
+        <!--
+            径向渐变
+            径向渐变也是通过两个点来定义其边缘位置，两点中的第一个点定义了渐变结束所围绕的圆环，它需要一个中心点，由cx和cy属性及半径r来定义，通过设置这些点我们可以移动渐变范围并改变它的大小，如上例的第二个<rect>所展示的。
+
+            第二个点被称为焦点，由fx和fy属性定义。第一个点描述了渐变边缘位置，焦点则描述了渐变的中心
+        -->
+        <svg>
+            <defs>
+                <radialGradient cx="0.25" cy="0.5" r="0.3" fx="0.5" fy="0.6" id="rg">
+                    <stop offset="0%" stop-color="white" />
+                    <stop offset="50%" stop-color="black" />
+                    <stop offset="100%" stop-color="blue" />
+                </radialGradient>
+            </defs>
+            <rect x="10" y="10" width="200" height="100" stroke="yellow" stroke-width="4" fill="url(#rg)" />
+        </svg>
+
+    </body>
+</html>

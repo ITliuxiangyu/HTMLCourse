@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>sessionStorage练习</title>
+</head>
+<body>
+
+    <p>数据写入示例</p>
+    <div>
+        姓名:<input placeholder="请输入姓名" id="name">
+    </div>
+    <div>
+        年龄:<input placeholder="请输入年龄" id="age">
+    </div>
+    <div>
+        性别:<input placeholder="请输入性别" id="sex">
+    </div>
+    <div>
+        电话:<input placeholder="请输入电话" id="phone">
+    </div>
+
+    <br>
+
+    <button onclick="clearSessionStorage()">清空数据</button>
+    <button onclick="saveData()">保存数据</button>
+
+</body>
+</html>
+<script>
+    function saveData() {
+        sessionStorage.setItem('name',document.getElementById('name').value);
+        sessionStorage.setItem('age',document.getElementById('age').value);
+        sessionStorage.setItem('sex',document.getElementById('sex').value);
+        sessionStorage.setItem('phone',document.getElementById('phone').value);
+        alert('数据保存成功!');
+        window.location.href = 'index_get.html';
+    }
+    function clearSessionStorage() {
+        sessionStorage.clear();
+    }
+</script>

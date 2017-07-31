@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>盒子模型</title>
+		<style>
+			* {
+				/* 把元素默认的margin清0 */
+				padding: 0;
+				/* 把元素默认的padding请0 */
+				margin: 0;
+			}
+
+			#box {
+				width: 200px;
+				height: 200px;
+				background: red;
+				
+				/* 上内填充 */
+				/*padding-top: 50px;*/
+				/* 下内填充 */
+				/*padding-bottom: 30px;*/
+				
+				/* 左内填充 */
+				/*padding-left: 40px;*/
+
+				/* 右内填充 */
+				/*padding-right: 20px;*/
+	
+				/* 上下左右padding都为50px */
+				/*padding: 50px;*/
+
+				/* 上下为60px 左右为40px */
+				/*padding: 60px 40px;*/
+				
+				/* 上50px 左右30px 下20px */
+				/*padding: 50px 30px 20px;*/
+
+				/* 上80px 右60px 下40px 左20px */
+				padding: 80px 60px 40px 20px;
+
+				/* 上边框宽度 */
+				/*border-top-width: 5px;*/
+				/* 上边框颜色 */
+				/*border-top-color: black;*/
+				/* 
+					上边框样式
+					solid: 实线;
+					dotted: 小圆点;
+					dashed: 虚线;
+					double: 双实线;
+				 */
+				/*border-top-style: solid;*/
+				/* 简写： 宽度 样式 颜色 */
+				/*border-top: 5px solid black;*/
+				
+				/* 右边框 */
+				/*border-right: 10px dashed yellow;*/
+
+				/* 左边框 */
+				/*border-left: 20px dotted purple;*/
+				
+				/* 下边框 */
+				/*border-bottom: 15px double skyblue;*/
+				
+				/* 
+					上下左右边框 宽度 样式 颜色
+					如果边框不设置样式， 就无法显示
+				 */
+				border: 20px solid gold;
+				/*border-bottom: 15px dotted black;*/
+				
+				/* 上外边距 */
+				/*margin-top: 50px;*/
+				
+				/* 左外边距 */
+				/*margin-left: 50px;*/
+				
+				/* 右外边距 */
+				/*margin-right: 50px;*/
+
+				/* 下外边距 */
+				/*margin-bottom: 50px;*/
+				
+				/* 简写和padding写法一样 */
+				margin: 50px;
+			}
+
+			.bottom {
+				height: 50px;
+				background: #ff0;
+			}
+
+		</style>
+	</head>
+	<body>
+
+		<!-- 
+			盒子模型： 网页设计中经常使用的盒子思维模型。 把html中的元素当成一个盒子。
+			盒模型在网页中所占位置的大小
+				宽度： margin-left + border-left + padding-left + width + padding-right + border-right + margin-right
+				高度： margin-top + border-top + padding-top  + height + padding-bottom + border-bottom + margin-bottom 
+		 -->
+
+		 <div id="box"></div>
+
+		 <div class="bottom"></div>
+		
+	</body>
+</html>

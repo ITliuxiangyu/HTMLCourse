@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+		<style>
+
+			.br {
+				width: 600px;
+				height: 600px;
+				border: 2px solid gold;
+			}
+			
+
+		</style>
+	</head>
+	<body>
+
+		<!-- 
+			html5:
+				添加了很多新的标签
+				支持音频， 视频播放
+				支持本地存储
+				废除了很多能用css样式代替的标签， 比如big， center...
+				废除了很多语义不明确的标签
+				添加了canvas（画布）标签
+
+		 -->
+		
+		<!--  
+			mark: 标记标签
+		 -->
+		<p>
+			大家在学习的时候一定要认真， 不要贪玩， 毕竟大家家里都不富裕， 好好学习， 将来才能找到好工作。 <mark>加油！</mark>
+		</p>
+
+
+		<!-- 
+			meter： 使用量（度量）标签
+			min: 最小值
+			max: 最大值
+			如果浏览器不兼容该标签， 会显示标签中的内容
+			low: 最低预警值
+			high： 最高预警值
+
+		 -->
+		 电池使用量：<meter value="81" min="-10" max="100" low="30" high="80">0.5</meter>
+		
+		<!--
+			最小值0， 不能更改
+			最大值默认是1
+		 -->
+		 进度条： <progress value="50" min="0" max="100"></progress>
+		<!-- 
+			wbr: 可以把整个英语单词进行分割 （单词间的换行）
+		 -->
+		 <p class="br">I<wbr>Love<wbr>You<wbr>I<wbr>Love<wbr>You<wbr>I<wbr>Love<wbr>You<wbr>I<wbr>Love<wbr>You<wbr>I<wbr>Love<wbr>You<wbr>I<wbr>Love<wbr>You<wbr>I<wbr>Love<wbr>You<wbr>I<wbr>Love<wbr>You<wbr>ILov<wbr>eYo<wbr>uILoveYouILoveYo<wbr>uILove<wbr>br>You<wbr>ILoveYouILoveYouILov<wbr>eYou<wbr>ILoveYo<wbr>uILo<wbr>ve<wbr>YouILove<wbr>Yo<wbr>uIL<wbr>oveYouI<wbr>LoveYo<wbr>uILov<wbr>eYouILove<wbr>YouILo<wbr>veYouILoveYouILoveYouILoveYouILoveYouILoveYouILoveYo<wbr>uILoveYouILoveYouILoveYouILoveYouILoveYouILoveYouILoveYouILoveYouILoveYouILoveYouILoveYouILoveYouILoveYouILoveYouILoveYouILoveYouILoveYouILoveYouILoveYouILoveYouILoveYouILoveYouILoveYouILoveYouILoveYouILoveYouILoveYouILoveYouILoveYouILoveYouILoveYouILoveYouILoveYouILoveYouILoveYouILoveYouILoveYouILoveYouILoveYouILoveYouILoveYouILoveYouILoveYouILoveYouILoveYouILoveYouILoveYouILoveYouILoveYouILoveYouILoveYouILoveYouILoveYouILoveYouILoveYouILoveYouILoveYouILoveYouILoveYouILoveYouILoveYouILoveYouILoveYouILoveYouILoveYouILoveYouILoveYouILoveYouILoveYouILoveYouILoveYouILoveYouILoveYouILoveYouILoveYou</p>
+
+		
+		<!-- 
+			ruby: 给内容添加拼音汉字等标注
+			rt: 给内容加的注释标题
+			rp: 不兼容的时候显示的内容
+		 -->
+		 <ruby>
+		 	软<rt>ruan</rt>
+		 	<rp>hi</rp>
+		 </ruby>
+
+		 <ruby>
+		 	圣女果<rt>🍅</rt>
+		 	黄瓜<rt>可以吃</rt>
+		 	榴莲<rt>可以煮着吃</rt>
+		 </ruby>
+
+		 <form action="">
+		 	<!-- 
+		 		自定义数据列表 
+		 		支持模糊查询
+		 	-->
+		 	<input type="text" list="show">
+		 	<datalist id="show">
+		 		<option value="">王力宏</option>
+		 		<option value="">王大力</option>
+		 		<option value="">123456</option>
+		 		<option value="">56789</option>
+		 		<option value="">张大胆</option>
+				<option value="">李小刚</option>
+				<option value="">李玉刚</option>
+		 	</datalist>
+
+		 </form>
+		
+		<!--  
+			音频播放标签
+			支持的格式： mp3, ogg, wav
+			autoplay: 自动播放
+			controls: 控制按钮
+			muted: 静音
+			loop: 循环播放
+		 -->
+		 <!-- <audio src="lib/爱情转移.mp3" autoplay controls muted loop></audio> -->
+
+		 <!-- 
+			浏览器兼容
+		  -->
+		  <audio autoplay muted>
+		  	<source src="lib/爱情转移.mp3"></source>
+			<source src="lib/爱情转移.ogg"></source>
+			<source src="lib/爱情转移.wav"></source>
+			该浏览器不支持音频播放， 清下载最新版浏览器
+		  </audio>
+
+		 
+		  <!-- 
+			视频播放标签
+			支持格式： mp4， ogg， webm
+			poster： 占位图片， 如果视频加载失败， 会显示该图片
+		   -->
+		    <!-- <video src="-lib/waige.mp4" autoplay controls loop muted poster="lib/dog.jpg"></video> -->
+
+		 <video autoplay muted>
+		 	<source src="lib/waige.mp4"></source>
+		 	<source src="lib/waige.ogg"></source>
+		 	<source src="lib/waige.webm"></source>
+		 	浏览器不支持
+		 </video>
+
+		<!-- 
+			折叠信息
+		 -->
+		 <details>
+		 	<summary>Mac 电脑</summary>
+			<p>256G</p>
+			<p>8核</p>
+		 </details>
+
+		<!-- 
+			input: text, password, button, image, file, submit, reset, radio, checkbox, hidden
+		 -->
+		 <form action="">
+			
+			<!-- 邮箱输入框， 提交时会检测输入框中的格式是否正确 -->
+		 	<input type="email">
+			
+			<!-- 网络路径 -->
+		 	<input type="url">
+
+		 	<!-- 数字 -->
+		 	<input type="number" value="2" step="5">
+
+		 	年月日<input type="date"><br>
+		 	年月<input type="month"><br>
+		 	年周<input type="week"><br>
+
+		 	国际统一时间<input type="datetime"><br>
+		 	本地时间<input type="datetime-local"><br>
+
+			<!--  自动聚焦 -->
+		 	<input type="text" autofocus>
+		 	<!-- 不能使用 -->
+		 	<input type="text" disabled>
+		 	<!-- 必须填写 -->
+		 	<input type="text" required>
+
+		 	<input type="submit" value="提交">
+		 	
+		 </form>
+
+
+		 <div class="nav"></div>
+		 <div class="header"></div>
+		 <div class="article"></div>
+		 <div class="aside"></div>
+		 <div class="footer"></div>
+
+		
+		<!-- 导航条 -->
+		 <nav></nav>
+		
+		<!-- 头部内容 -->
+		 <header></header>
+		
+		<!-- 尾部内容 -->
+		<footer></footer>
+		
+		<!-- 侧边栏内容 -->
+		<aside></aside>
+
+		<!-- 有独立内容的部分写在这里， 比如一个评论区，一个讨论区等等 -->
+		<article></article>
+		
+		<!-- 这里面放h1-h6 -->
+		<hgroup></hgroup>
+
+		<button>按钮</button>
+
+		<!-- 
+			在网页设计中， 多使用语义化更加明确的标签
+		 -->
+
+		 <br>
+		 <br>
+		 <br>
+		 <br>
+		 <br>
+		 <br>
+		 <br>
+		 <br>
+		 <br>
+		 <br>
+		 <br>
+		 <br>
+		 <br>
+		 <br>
+		 <br>
+		 <br>
+		 <br>
+		 <br>
+		 <br>
+		 <br>
+		 <br>
+		 <br>
+		 <br>
+		 <br>
+		 <br>
+		 <br>
+		 <br>
+		 <br>
+		 <br>
+		 <br>
+		 <br>
+		 <br>
+		 <br>
+		 <br>
+		 <br>
+		 <br>
+		 <br>
+		 <br>
+		 <br>
+		 <br>
+		 <br>
+		 <br>
+		 <br>
+		 <br>
+		 <br>
+		 <br>
+		 <br>
+		 <br>
+		 <br>
+		 <br>
+
+
+		
+	</body>
+</html>

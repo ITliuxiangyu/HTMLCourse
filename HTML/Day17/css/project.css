@@ -1,0 +1,74 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.top {
+    background: yellow;
+    display: flex;
+
+    justify-content: flex-end;
+    padding-top: 20px;
+    align-items: baseline;
+}
+
+.top>a {
+    margin-left: 20px;
+
+}
+
+.top>a:last-child {
+    background: blue;
+    color: white;
+    padding: 0 6px;
+    line-height: 26px;
+    margin-right: 15px;
+}
+
+.logo>img {
+    width: 270px;
+    height: 129px;
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 3px;
+    background: red;
+}
+
+.search {
+    display: flex;
+    /*background: red;*/
+    /* 子元素(item)在主轴方向的排列方式 */
+    justify-content: center;
+    margin-top: 48px;
+}
+
+.search>.right {
+    width: 100px;
+    height: 36px;
+    background-color: blue;
+    color: white;
+    text-align: center;
+    line-height: 36px;
+}
+
+.search>.left {
+    width: 540px;
+    height: 36px;
+    /* 怪异盒模型, 宽高包含border, padding, content */
+    box-sizing: border-box;
+    border: 1px solid darkgray;
+}
+
+.search>.left>input {
+    border: none;
+    outline: none;
+    height: 34px;
+    width: 460px;
+    font-size: 20px;
+}
+
+
+

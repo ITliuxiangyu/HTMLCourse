@@ -1,0 +1,283 @@
+/* 顶部遮罩层样式 */
+#nav {
+	width: 100%;
+	/*background: yellow;*/
+	position: fixed;
+	z-index: 1;
+}
+
+#nav>.up>img {
+	height: 44px;
+}
+
+#nav>.up {
+	position: relative;
+	padding: 13px 0;
+	/* 不能使块元素居中 */
+	text-align: center;
+}
+
+#nav>.down {
+	position: relative;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	font-size: 0px;
+}
+
+#nav>.down>a {
+	font-size: 13px;
+	color: #9D9D9D;
+	padding: 0 82px;
+	font-weight: bold;
+}
+
+#nav>.filter {
+	position: absolute;
+	width: 100%;
+	height: 100px;
+	background: black;
+	opacity: 0.7;
+}
+
+/* 选中第一个a标签 */
+#nav>.down>a:nth-child(1) {
+	color: white;
+}
+
+#nav>.down>a:hover {
+	color: white;
+}
+
+/*------------------------------------------------*/
+/* 中间内容 */
+#content {
+	width: 1200px;
+	margin: 0 auto;
+	/*background: red;*/
+	padding-top: 130px;
+}
+
+.scrollView>.img>img {
+	width: 1200px;
+}
+
+.scrollView {
+	position: relative;
+}
+
+.scrollView>h3 {
+	position: absolute;
+	width: 100%;
+	text-align: center;
+	bottom: 0;
+	background: black;
+	opacity: 0.5;
+	height: 34px;
+	line-height: 34px;
+	color: white;
+	font-weight: normal;
+	font-size: 16px;
+}
+
+/* 页面控制器 */
+.pageControl>ul {
+	font-size: 0px;
+	text-align: center;
+	padding: 13px 0 26px; 
+	border-bottom: 1px solid #E8E8E8;
+}
+
+.pageControl>ul>li {
+	display: inline-block;
+	width: 6px;
+	height: 6px;
+	background: #999;
+	border-radius: 3px;
+	margin: 0 9px;
+	/* 垂直居中 */
+	vertical-align: middle;
+}
+
+.pageControl>ul>.active {
+	border: 1px solid #999;
+	background: white;
+}
+
+.artical {
+	padding: 26px 0;
+	border-bottom: 1px solid #999;
+}
+
+.artical>p {
+	text-indent: 2em;
+	font-size: 19px;
+	font-family: "翩翩体-简";
+	color: rgb(102, 102, 102);
+	line-height: 28px;
+	font-style: oblique;
+}
+
+/* 小图片 */
+.smallImages {
+	font-size: 0px;
+	text-align: center;
+	padding: 26px 0 50px;
+}
+
+.smallImages>img {
+	width: 60px;
+	margin: 0 10px;
+}
+
+
+/* 瀑布流部分 */
+.waterflow>ul>li {
+	display: inline-block;
+}
+
+.waterflow>ul>li>a {
+	display: inline-block;
+	width: 372px;
+	border-radius: 8px;
+	overflow: hidden;
+}
+
+.waterflow>ul>li>a>div {
+	/* 相对定位 */
+	position: relative;
+	height: 206px;
+}
+
+.waterflow>ul>li>a>h3 {
+	height: 35px;
+	line-height: 35px;
+	text-align: center;
+	background: white;
+}
+
+.waterflow img {
+	width: 372px;
+	height: 206px;
+}
+
+.waterflow>ul>li>a>div>div, .waterflow>ul>li>a>div>h2, .waterflow>ul>li>a>div>h4 {
+	position: absolute;
+	width: 100%;
+	display: none;
+}
+
+.waterflow .filter {
+	width: 100%;
+	height: 100%;
+	top: 0;
+	background: black;
+	opacity: 0.4;
+}
+
+.waterflow h2 {
+	bottom: 50%;
+	text-align: center;
+}
+
+.waterflow h4 {
+	top: 50%;
+	text-align: center;
+}
+
+.waterflow {
+	font-size: 0px;
+}
+
+.waterflow h2 {
+	font-size: 30px;
+	color: white;
+}
+
+.waterflow h4 {
+	font-size: 14px;
+	color: white;
+}
+
+.waterflow h3 {
+	font-size: 15px;
+	color: #999;
+}
+
+/* hover效果 */
+.waterflow a:hover .filter, .waterflow a:hover h2, .waterflow a:hover h4 {
+	display: block;
+}
+
+.waterflow a:hover h3 {
+	color: black;
+}
+
+.waterflow .middle {
+	margin-left: 42px;
+	margin-right: 42px;
+}
+
+.waterflow li {
+	margin-bottom: 48px;
+}
+
+#footer {
+	margin-top: 16px;
+	background: #e0e0e0;
+	overflow: hidden;
+	padding: 10px 0;
+}
+
+#footer>div {
+	float: left;
+	width: 50%;
+	height: 164px;
+}
+
+#footer .link {
+	float: right;
+	margin-right: 44px;
+}
+
+
+#footer>.left>.link img {
+	width: 30px;
+	height: 25px;
+	margin-left: 9px;
+}
+
+#footer>.left {
+	border-right: 1px solid #BCBCBC;
+	/* 运算符左右必须带空格 */
+	width: calc(50% - 1px);
+}
+
+#footer>.right img {
+	width: 143px;
+}
+
+#footer>.right {
+	color: #6e726e;
+	font-size: 12px;
+	line-height: 19px;
+}
+
+#footer>.right ul {
+	margin-left: 30px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

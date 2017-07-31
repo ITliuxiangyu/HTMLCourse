@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Web SQL 介绍</title>
+</head>
+<body>
+
+    <button onclick="creatNewWebDB()">创建WebDB数据库</button>
+
+</body>
+</html>
+<script>
+    var db = '';
+    //openDatabase(DBName,DBVersion,DBDescribe,DBSize,Callback());
+    //DBDescribe表示对数据库的描述 DBSize是数据库大小  写法为: X * 1024 * 1024
+    function creatNewWebDB() {
+        db = openDatabase('Person','1.0','PersonManage',2 * 1024 * 1024,function () {
+            console.log("数据库创建成功");
+        });
+        console.log(db);
+
+    }
+    //创建成功后再点击查看效果 会出现报错 不要连续创建,没有关闭不能继续创建
+
+</script>

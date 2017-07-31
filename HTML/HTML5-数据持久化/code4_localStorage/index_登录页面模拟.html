@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录demo</title>
+    <link type="text/css" rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <fieldset>
+        <legend>登录</legend>
+        <p>
+            <span id="statusSpan" class="statusSpan"></span>
+        </p>
+
+        <p>
+            账号:<input id="userName" placeholder="请输入账号!" >
+        </p>
+
+        <p>
+            密码:<input id="passWord" placeholder="请输入密码!" >
+        </p>
+
+        <input type="checkbox" placeholder="" id="checkSave">
+        <span>是否保存密码?</span>
+        <div>
+            <button class="loginBtn" onclick="login()">登录</button>
+            <button class="loginBtn" onclick="clearVal()">清空</button>
+        </div>
+    </fieldset>
+</body>
+</html>
+<script>
+    console.log(localStorage);
+    function login() {
+        var checkBox = document.getElementById('checkSave');
+        if(document.getElementById('userName').value && document.getElementById('passWord').value && checkBox.checked){
+            localStorage.setItem('userName',document.getElementById('userName').value);
+            localStorage.setItem('passWord',document.getElementById('passWord').value);
+            localStorage.setItem('checkSave',true);
+            document.getElementById('statusSpan').innerText = '账号信息保存成功!';
+            setTimeout(function () {
+                document.getElementById('statusSpan').innerText = '';
+            },2000);
+        }
+
+    }
+    function clearVal() {
+        //localStorage.clear();
+        localStorage.removeItem('userName');
+        localStorage.removeItem('passWord');
+        localStorage.removeItem('checkSave');
+        document.getElementById('statusSpan').innerText = 'localStorage清除成功!';
+        setTimeout(function () {
+            document.getElementById('statusSpan').innerText = '';
+        },2000);
+    }
+    //页面出现的时候首先获取用户名和密码还有保存选项是否有值
+    if(localStorage.userName){
+        document.getElementById('userName').value = localStorage.userName;
+    }
+    if(localStorage.passWord){
+        document.getElementById('passWord').value = localStorage.passWord;
+    }
+    if(localStorage.checkSave){
+        document.getElementById('checkSave').checked = true;
+    }
+</script>

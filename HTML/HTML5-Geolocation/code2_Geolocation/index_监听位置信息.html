@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>监听位置信息</title>
+</head>
+<body>
+    <button onclick="openLocationWatch()">
+        开启位置监听
+    </button>
+    <button onclick="closeLocationWatch()">
+        关闭位置监听
+    </button>
+    <div id="locationDiv"></div>
+</body>
+</html>
+<script>
+    var watchId = null;
+    function openLocationWatch() {
+        if(navigator.geolocation){
+            watchId = navigator.geolocation.watchPosition(function (data) {
+                var locationDiv = document.getElementById('locationDiv');
+                var str_html = '';
+                str_html += "<p><span>" + "您的位置精度为:" + data.coords.accuracy + "</span></p>";
+                str_html += "<p><span>" + "您的当前纬度为:" + data.coords.latitude + "</span></p>";
+                str_html += "<p><span>" + "您的当前经度为:" + data.coords.longitude + "</span></p>";
+                str_html += "<p><span>" + "您的当前速度为:" + data.coords.speed + "</span></p>";
+                str_html += "<p><span>" + "您的当前海拔为:" + data.coords.altitude + "</span></p>";
+                locationDiv.innerHTML = str_html;
+                console.log(watchId);
+            },function (error) {
+                var locationDiv = document.getElementById('locationDiv');
+                var str_html = '';
+                switch (error.code){
+                    case 0:
+                        str_html = "未知错误信息!";
+                        break;
+                    case 1:
+                        str_html = "您拒绝了定位的服务请求!";
+                        break;
+                    case 2:
+                        str_html = "没有获取到正确的未知信息!";
+                        break;
+                    case 3:
+                        str_html = "获取位置的操作超时!";
+                        break;
+                }
+                locationDiv.innerHTML = str_html;
+            },{timeout:10000,maximumage:10000,enableHighAccuracy:true})
+        }
+    }
+    function closeLocationWatch() {
+        if (navigator.geolocation){
+            navigator.geolocation.clearWatch(watchId);
+            alert("关闭位置监听成功!");
+        }
+    }
+</script>

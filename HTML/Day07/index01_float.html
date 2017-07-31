@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+		<style>
+			* {
+				padding: 0;
+				margin: 0;
+			}
+
+			.parent {
+
+				width: 800px;
+				height: 600px;
+				border: 2px solid black;
+				margin: 50px auto 0;
+			}
+
+			.parent>.left {
+				width: 150px;
+				height: 150px;
+				background: blue;
+				/* 左浮动 */
+				/*float: left;*/
+				/* 右浮动 */
+				float: right;
+			}
+
+			.parent>.right {
+				width: 650px;
+				height: 200px;
+				border: 2px solid gold;
+				background: red;
+				/*float: left;*/
+				float: right;
+			}
+
+			.big {
+				width: 750px;
+				height: 600px;
+				border: 2px solid gold;
+				margin: 50px auto 0;
+			}
+
+			.big>.up {
+				width: 150px;
+				height: 150px;
+				background: red;
+			}
+
+			.big>.down {
+				width: 200px;
+				height: 200px;
+				background: green;
+				float: right;
+			}
+
+			.inline>a {
+				background: blue;
+				float: left;
+				width: 200px;
+				height: 200px;
+			}
+
+
+			.inline>span {
+				background: yellow;
+				float: left;
+			}
+
+			.out {
+				height: 200px;
+				border: 5px solid black;
+			}
+
+			.out>.in {
+				background: blue;
+				float: left;
+				width: 100px;
+				height: 50px;
+			}
+
+			img {
+				float: left;
+			}
+
+
+
+		</style>
+	</head>
+	<body>
+
+		<!--  
+			什么是浮动：
+				元素脱离文档流（元素在网页中所占的位置）， 沿着某一个方向进行移动， 直到碰到父级边界或者同级浮动元素的边界才会停止
+		 -->
+
+		<div class="parent">
+			<div class="left"></div>
+			<div class="right"></div>
+		</div>
+
+		<!--  浮动元素上方如果有块级元素，浮动不远不会遮盖上方块级元素 -->
+		<div class="big">
+			<div class="up"></div>
+			<div class="down"></div>
+		</div>
+
+		<div class="inline">
+			<a href="http://www.baidu.com">百度一下</a>
+			<span>大家好</span>
+		</div>
+
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+
+		<div class="out">
+			<div class="in">歪哥</div>
+		</div>
+
+		<div>
+			<img src="dog.jpg" alt="">
+			的刷卡缴费都开始了分解诶欧豪范德萨好浪费是大风黄色大垃圾费是多久恢复数据看到回复山东黄金福建省地方驾驶负担就技术的话费卡和覅uehsdhfjh方式打开金花忽而无法季后赛得分好是否回家的刷卡缴费都开始了分解诶欧豪范德萨好浪费是大风黄色大垃圾费是多久恢复数据看到回复山东黄金福建省地方驾驶负担就技术的话费卡和覅uehsdhfjh方式打开金花忽而无法季后赛得分好是否回家的刷卡缴费都开始了分解诶欧豪范德萨好浪费是大风黄色大垃圾费是多久恢复数据看到回复山东黄金福建省地方驾驶负担就技术的话费卡和覅uehsdhfjh方式打开金花忽而无法季后赛得分好是否回家啥地方的刷卡缴费都开始了分解诶欧豪范德萨好浪费是大风黄色大垃圾费是多久恢复数据看到回复山东黄金福建省地方驾驶负担就技术的话费卡和覅uehsdhfjh方式打开金花忽而无法季后赛得分好是否回家的刷卡缴费都开始了分解诶欧豪范德萨好浪费是大风黄色大垃圾费是多久恢复数据看到回复山东黄金福建省地方驾驶负担就技术的话费卡和覅uehsdhfjh方式打开金花忽而无法季后赛得分好是否回家的刷卡缴费都开始了分解诶欧豪范德萨好浪费是大风黄色大垃圾费是多久恢复数据看到回复山东黄金福建省地方驾驶负担就技术的话费卡和覅uehsdhfjh方式打开金花忽而无法季后赛得分好是否回家的刷卡缴费都开始了分解诶欧豪范德萨好浪费是大风黄色大垃圾费是多久恢复数据看到回复山东黄金福建省地方驾驶负担就技术的话费卡和覅uehsdhfjh方式打开金花忽而无法季后赛得分好是否回家啥地方的刷卡缴费都开始了分解诶欧豪范德萨好浪费是大风黄色大垃圾费是多久恢复数据看到回复山东黄金福建省地方驾驶负担就技术的话费卡和覅uehsdhfjh方式打开金花忽而无法季后赛得分好是否回家的刷卡缴费都开始了分解诶欧豪范德萨好浪费是大风黄色大垃圾费是多久恢复数据看到回复山东黄金福建省地方驾驶负担就技术的话费卡和覅uehsdhfjh方式打开金花忽而无法季后赛得分好是否回家的刷卡缴费都开始了分解诶欧豪范德萨好浪费是大风黄色大垃圾费是多久恢复数据看到回复山东黄金福建省地方驾驶负担就技术的话费卡和覅uehsdhfjh方式打开金花忽而无法季后赛得分好是否回家的刷卡缴费都开始了分解诶欧豪范德萨好浪费是大风黄色大垃圾费是多久恢复数据看到回复山东黄金福建省地方驾驶负担就技术的话费卡和覅uehsdhfjh方式打开金花忽而无法季后赛得分好是否回家啥地方的刷卡缴费都开始了分解诶欧豪范德萨好浪费是大风黄色大垃圾费是多久恢复数据看到回复山东黄金福建省地方驾驶负担就技术的话费卡和覅uehsdhfjh方式打开金花忽而无法季后赛得分好是否回家的刷卡缴费都开始了分解诶欧豪范德萨好浪费是大风黄色大垃圾费是多久恢复数据看到回复山东黄金福建省地方驾驶负担就技术的话费卡和覅uehsdhfjh方式打开金花忽而无法季后赛得分好是否回家的刷卡缴费都开始了分解诶欧豪范德萨好浪费是大风黄色大垃圾费是多久恢复数据看到回复山东黄金福建省地方驾驶负担就技术的话费卡和覅uehsdhfjh方式打开金花忽而无法季后赛得分好是否回家的刷卡缴费都开始了分解诶欧豪范德萨好浪费是大风黄色大垃圾费是多久恢复数据看到回复山东黄金福建省地方驾驶负担就技术的话费卡和覅uehsdhfjh方式打开金花忽而无法季后赛得分好是否回家啥地方的刷卡缴费都开始了分解诶欧豪范德萨好浪费是大风黄色大垃圾费是多久恢复数据看到回复山东黄金福建省地方驾驶负担就技术的话费卡和覅uehsdhfjh方式打开金花忽而无法季后赛得分好是否回家
+		</div>
+
+
+		<!-- 
+			inline-block:
+				1. 如果不设置宽高， 由内容撑开宽高
+				2. 可以和行内元素， inline-block元素同排显示
+				3. 换行会被解析
+				4. ie6， ie7不支持
+
+		 -->
+
+		 <!-- 
+			float:
+				1. 不设置宽高， 由内容撑开宽高
+				2. 会使元素脱离文档流 （文档流: 元素在网页中所占的位置）
+				3. 让元素同时具有行内元素和块元素的部分特征
+				4. 会提升元素层级
+				5. 不会遮盖文字
+
+		  -->
+
+
+
+		
+	</body>
+</html>

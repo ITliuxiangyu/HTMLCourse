@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>结构伪类选择器</title>
+		<style>
+			/*.top>li:nth-child(odd) {
+				background: red;
+				margin-bottom: 20px;
+			}*/
+
+			/*.top>li:nth-last-child(odd) {
+				background: red;
+				margin-bottom: 20px;
+			}*/
+
+			/*.top>li:first-child {
+				background: red;
+			}*/
+
+			/*.top>li:last-child {
+				background: red;
+			}*/
+
+			.bottom>p:nth-of-type(2) {
+				background: red;
+				margin-bottom: 20px;
+				height: 20px;
+			}
+
+
+
+		</style>
+	</head>
+	<body>
+
+		<ul class="top">
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+			<li>6</li>
+			<li>7</li>
+			<li>8</li>
+			<li>9</li>
+			<li>10</li>
+		</ul>
+
+		<div class="bottom">
+			<div>1</div>
+			<p>2</p>
+			<ul>3</ul>
+			<ol>4</ol>
+			<p>5</p>
+			<div>6</div>
+			<p>7</p>
+			<p>8</p>
+			<p>9</p>
+			<div>10</div>
+			<p>11</p>
+			<p>12</p>
+			<div>13</div>
+			<p>14</p>
+		</div>
+
+		<!-- 
+			括号中可以跟数字
+			E:nth-child(num): 选中和E元素同级的第num个E元素
+
+			括号中也可以跟公式
+			n: 从0开始
+			E:nth-child(n): 选中和E元素同级的所有E元素
+
+			2n+1： 选中奇数
+			2n： 选中偶数
+
+			括号中也可以跟英语单词
+			odd： 奇数， even 偶数
+
+			nth-last-child: 用法和nth-child用法一样， 只不过顺序和它相反
+
+			E:nth-of-type: 用法和nth-child一样， 只不过会过滤掉不是E类型的元素
+			
+			E:nth-last-of-type: 用法同上， 不过倒着查
+
+			E:first-of-type: 效果同 E:nth-of-type(1)
+			E:last-of-type: 效果同 E:nth-last-of-type(1)
+
+
+		 -->
+		
+	</body>
+</html>

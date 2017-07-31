@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>删除数据</title>
+</head>
+<body>
+
+    <button onclick="deleteTable()">删除数据</button>
+
+
+</body>
+</html>
+<script>
+    var db;
+    function deleteTable() {
+        //打开数据库
+        db = openDatabase('Person','1.0','PersonManage',2 * 1024 * 1024,function () {
+            console.log("数据库创建成功");
+        });
+        if(db){
+            //更新数据库
+            var sqlStr = "delete from PersonInfo where PersonId=?";
+            db.transaction(function (tx) {
+                tx.executeSql(sqlStr,[2],function (tx,rs) {
+                    console.log("删除成功");
+                },function (tx,ex) {
+                    console.log("删除出错!")
+                });
+            },function () {
+                console.log('执行事务出错!');
+            },function () {
+                console.log("执行事务成功");
+            })
+        }
+    }
+</script>

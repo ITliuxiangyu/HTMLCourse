@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+		<style>
+			
+			div {
+				width: 400px;
+				height: 200px;
+				border: 2px solid black;
+				margin: 200px auto 0;
+				background-image: linear-gradient(to bottom right, red, yellow, blue, green, cyan);
+				text-align: center;
+				font-size: 50px;
+				line-height: 200px;
+				color: white;
+				/* 
+					倒影 
+					位置， 距离， 蒙版
+					位置： above (上边)， below（下边）， right（右边）， left（左边）
+					距离： 倒影和元素之间的距离
+					蒙版： 可以是图片（url）， 还可以是渐变效果
+				*/
+				-webkit-box-reflect: right 50px linear-gradient(to right, transparent, white, transparent);
+			}
+
+			img {
+				width: 300px;
+				margin: 50px 50px 200px;
+				-webkit-box-reflect: right 50px radial-gradient(100px circle, transparent, white, red);
+			}
+		
+
+		</style>
+	</head>
+	<body>
+
+		<div>骚年张增光</div>
+
+		<img src="img/dameizi.jpeg" alt="">
+		
+	</body>
+</html>

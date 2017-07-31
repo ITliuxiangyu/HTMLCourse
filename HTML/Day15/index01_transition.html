@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>过渡动画</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+
+			div {
+				width: 200px;
+				height: 200px;
+				border: 2px solid black;
+				background: red;
+				margin: 100px auto 0;
+				position: absolute;
+				left: 0;
+				/* 
+					过渡动画属性 
+					如果支持多个属性， 属性之间用逗号隔开
+				*/
+				/*transition-property: transform, width, background-color;*/
+				
+				/* 	持续时间 */
+				/*transition-duration: 2s;*/
+
+				/* 
+					动画事前函数 
+					linear: 匀速;
+					ease: 默认值 逐渐慢下来;
+					ease-in: 淡入效果， 加速;
+					ease-out: 淡出效果， 减速;
+					ease-in-out: 淡入淡出效果， 先慢后快再慢;
+
+					贝塞尔曲线
+					cubic-bezier(x1, y1, x2, y2)
+					前两个参数控制第一个点的位置
+					后两个参数控制第二个点的位置
+					默认有一个起始点（0， 0）， 还有一个终点（1， 1）
+				*/
+				/*transition-timing-function: cubic-bezier(0.2, -0.7, 0.8, 1.8);*/
+				
+				/* 动画延迟时间 */
+				/*transition-delay: 3s;*/
+
+				/* 
+					第一个值： transtion-property， 默认all
+					第二个值： transition-duration
+					第三个值： transition-timing-function
+					第四个值： transition-delay
+				*/
+				/*transition: all 2s linear 0s;*/
+				/*
+					如果想要有动画， 至少要给一个时间
+				*/
+				/*transition: 2s;*/
+				
+				/*
+					可以写多个属性动画 
+				*/
+				transition: width 2s linear,
+						   height 5s linear;
+
+			}
+
+			div:hover {
+				/*transform: scale(2) rotate(1080deg);*/
+				/*width: 1000px;*/
+				/* 过渡动画要给初始值 */
+				/*left: 200px;*/
+				width: 300px;
+				height: 300px;
+			}
+
+			@media screen and (min-width: 600px) {
+				div {
+					left: 600px;
+				}
+			}
+
+			input {
+				transition: 2s;
+			}
+
+			input:focus {
+				transform: scale(2);
+				background: red;
+			}
+
+			input:checked {
+				margin-left: 200px;
+			}
+
+		</style>
+	</head>
+	<body>
+
+		<div></div>
+		
+		<input type="text">
+		<input type="radio">
+		
+		<!-- 
+			绚丽的动画有时候能增加用户体验， 但是一定也要合理使用
+
+			可以触发动画的场景
+			1： :hover, :checked, :focus
+			2. 媒体查询
+			3. js
+
+
+		 -->
+
+		
+	</body>
+</html>

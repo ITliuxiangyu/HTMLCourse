@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>vertical-align</title>
+		<style>
+			.up {
+				background: yellow;
+			}
+			.up>span {
+				background: red;
+				font-size: 24px;
+				line-height: 24px;
+				/* 垂直方向居中对齐 */
+				/* 如果相让几个元素居中对齐， 都要写上vertical-align： middle */
+				vertical-align: middle;
+			}
+			.up>em {
+				background: blue;
+				/*
+					vertical-align: 垂直对齐方式;
+					baseline: 基线对齐;
+					top: 顶部对齐;
+					bottom: 底部对齐;
+					middle: 居中对齐;
+				*/
+				vertical-align: middle;
+			}
+
+			.middle {
+				background: red;
+			}
+
+			.middle>img {
+				/* 通过vertical-align 可以解决图片和父级元素下方有几个像素的问题 */
+				vertical-align: top;
+			}
+
+			.down {
+				height: 300px;
+				/*padding: 50px 0;*/
+				background: yellow;
+			}
+
+			.down>img {
+				vertical-align: middle;
+			}
+
+			.down>em {
+				line-height: 300px;
+			}
+
+
+
+
+		</style>
+	</head>
+	<body>
+
+		<div class="up">
+			<span>QQ</span>
+			<em>6.1</em>
+		</div>
+
+		<div class="middle">
+			<img src="girl.jpg" alt="">
+		</div>
+
+		<div class="down">
+			<img src="girl.jpg" alt="">
+			<em></em>
+		</div>
+
+		
+	</body>
+</html>
